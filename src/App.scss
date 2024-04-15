@@ -1,0 +1,12 @@
+@import "./Styles//Header.scss";
+@import "./Styles/Variables.scss";
+
+.App {
+  text-align: center;
+  font-family: $agencyFB;
+
+  .mainLogo{
+    border-radius: 100px;
+  }
+}
+
