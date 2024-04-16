@@ -1,26 +1,31 @@
 import React from "react";
-// import kdclogo from "../Assets/kdclogo.png";
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 function Header() {
     return (
-    <section className="header">
-        <div className="mainHeader">
-        {/* Kindness Development Center Inc. */}
-            {/* <img src={kdclogo} width="10%" alt="circle with kindness development center inc" className="mainLogo"/> */}
-            <span className="title">Kindness Development Center Inc.</span>
-        </div>
-        <section className="subHeader">
-            <div className="subHeaderLabel">
-                <a href="#mission">Our Mission</a>
-            </div>
-            <div className="subHeaderLabel">
-                <a href="#thecenter">The Center</a>
-            </div>
-            <div className="subHeaderLabel">
-            <a href="#aboutus">About Us</a>
-            </div>
-        </section>
-    </section>
+    <Container className="header">
+        <Row className="justify-content-md-start">
+            <Col className="mainHeader" md="6">
+                <span className="title">Kindness Development Center Inc.</span>
+            </Col>
+            <Col className="subHeader" md="6">
+                <Row className="justify-content-md-end">
+                    <Col className="subHeaderLabel" md="4">
+                        <a href="#mission">Our Mission</a>
+                    </Col>
+                    <Col className="subHeaderLabel" md="4">
+                        <a href="#thecenter">The Center</a>
+                    </Col>
+                    <Col className="subHeaderLabel" md="3">
+                    <a href="#aboutus">About Us</a>
+                    </Col>
+                </Row>
+            </Col>
+
+        </Row>
+    </Container>
     )
 }
 

@@ -1,11 +1,17 @@
 import './App.scss';
 import Home from './Views/Home';
+import ThemeProvider from 'react-bootstrap/ThemeProvider';
 
 function App() {
   return (
-    <div className="App">
-      <Home />
-    </div>
+    <ThemeProvider
+      breakpoints={['xxxl', 'xxl', 'xl', 'lg', 'md', 'sm', 'xs', 'xxs']}
+      minBreakpoint="xxs"
+    >
+      <div className="App">
+        <Home />
+      </div>
+    </ThemeProvider>
   );
 }
 

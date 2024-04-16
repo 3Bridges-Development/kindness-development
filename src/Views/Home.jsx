@@ -1,13 +1,19 @@
 import React from "react";
 import Header from "../Components/Header";
+import Mission from "../Components/Mission";
+import MainBlurb from "../Components/MainBlurb";
+import AboutUs from "../Components/AboutUs";
+import Center from "../Components/Center";
 import Footer from "../Components/Footer";
-import kdclogo from "../Assets/kdclogo.png";
 
 function Home() {
     return (
         <div className="home">
             <Header />
-            <img src={kdclogo} width="10%" alt="circle with kindness development center inc" className="mainLogo"/>
+            <MainBlurb />
+            <Mission />
+            <Center />
+            <AboutUs />
             <Footer />
         </div>
     )

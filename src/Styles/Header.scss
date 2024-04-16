@@ -1,13 +1,11 @@
 @import './Variables.scss';
 
 .header {
-    // background-color: $lightBlue;
-    // background-color: $blue;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 10px;
+
+    .mainHeader {
+        padding: 5px;
+        font-size: 3rem;
+    }
 
     .mainLogo {
         border-radius: 100px;
@@ -15,24 +13,19 @@
 
     .title {
         font-size: 2rem;
-        // color: $red;
+        color: $red;
+        font-weight: 700;
     }
 
     .subHeader{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-        align-items: center;
-        // color: $red;
-
+        
         .subHeaderLabel {
-            padding: 20px;
-            font-size: 2rem;
-
+            padding-top: 30px;
+            font-size: 1.5rem;
+            
             a{
                 text-decoration: none;
-                // color: $rose;
+                color: $red;
             }
         }
     }
