@@ -5,6 +5,7 @@ import MainBlurb from "../Components/MainBlurb";
 import AboutUs from "../Components/AboutUs";
 import Center from "../Components/Center";
 import Footer from "../Components/Footer";
+import Contact from "../Components/Contact";
 
 function Home() {
     return (
@@ -14,6 +15,7 @@ function Home() {
             <Mission />
             <Center />
             <AboutUs />
+            <Contact />
             <Footer />
         </div>
     )
