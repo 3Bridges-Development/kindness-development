@@ -1,5 +1,4 @@
 import React from "react";
-// import kdclogo from "../Assets/kdclogo.png";
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -9,8 +8,6 @@ function Header() {
     <Container className="header">
         <Row className="justify-content-md-start">
             <Col className="mainHeader" md="6">
-            {/* Kindness Development Center Inc. */}
-                {/* <img src={kdclogo} width="10%" alt="circle with kindness development center inc" className="mainLogo"/> */}
                 <span className="title">Kindness Development Center Inc.</span>
             </Col>
             <Col className="subHeader" md="6">
