@@ -1,0 +1,32 @@
+@import './Variables.scss';
+
+.header {
+
+    .mainHeader {
+        padding: 5px;
+        font-size: 3rem;
+    }
+
+    .mainLogo {
+        border-radius: 100px;
+    }
+
+    .title {
+        font-size: 2rem;
+        color: $red;
+        font-weight: 700;
+    }
+
+    .subHeader{
+        
+        .subHeaderLabel {
+            padding-top: 30px;
+            font-size: 1.5rem;
+            
+            a{
+                text-decoration: none;
+                color: $red;
+            }
+        }
+    }
+}
