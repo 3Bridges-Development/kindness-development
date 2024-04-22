@@ -19,8 +19,8 @@ function Center() {
                 </Row>
             </Col>
             <Col className="image" md="6">
-                <img src={kdclogo} width="25%" alt="circle with kindness development center inc" className="mainLogo"/>
-                {/* <span className="title">Kindness Development Center Inc.</span> */}
+                <img src={kdclogo} width="25%" alt="circle with kindness developmental center inc" className="mainLogo"/>
+                {/* <span className="title">Kindness Developmental Center Inc.</span> */}
             </Col>
         </Row>
     </Container>

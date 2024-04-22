@@ -8,7 +8,7 @@ function Header() {
     <Container className="header">
         <Row className="justify-content-md-start">
             <Col className="mainHeader" md="6">
-                <span className="title">Kindness Development Center Inc.</span>
+                <span className="title">Kindness Developmental Center Inc.</span>
             </Col>
             <Col className="subHeader" md="6">
                 <Row className="justify-content-md-end">

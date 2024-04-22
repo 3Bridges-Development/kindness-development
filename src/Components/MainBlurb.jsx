@@ -9,7 +9,7 @@ function MainBlurb() {
     <Container className="MainBlurb">
         <Row className="sm-12">
             <Col className="image">
-                <img src={backgroundImage} width="40%" alt="circle with kindness development center inc" className="mainLogo"/>
+                <img src={backgroundImage} width="40%" alt="circle with kindness developmental center inc" className="mainLogo"/>
             </Col>
 
         </Row>
