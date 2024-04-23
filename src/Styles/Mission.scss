@@ -1,8 +1,7 @@
 .mission {
     padding-top: 50px;
-    // would be nice to have curved yellow background
     color: $red;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 600;
 
     #mission {
@@ -12,5 +11,9 @@
     .text{
         padding-top: 10px;
         font-weight: 400;
+    }
+
+    .visionSpan {
+        padding-bottom: 10px;
     }
 }

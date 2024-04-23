@@ -12,14 +12,17 @@ function Header() {
             </Col>
             <Col className="subHeader" md="6">
                 <Row className="justify-content-md-end">
-                    <Col className="subHeaderLabel" md="4">
-                        <a href="#mission">Our Mission</a>
+                    <Col className="subHeaderLabel" md="3">
+                        <a href="#vission">Our Vision</a>
                     </Col>
-                    <Col className="subHeaderLabel" md="4">
+                    <Col className="subHeaderLabel" md="3">
                         <a href="#thecenter">The Center</a>
                     </Col>
                     <Col className="subHeaderLabel" md="3">
                     <a href="#aboutus">About Us</a>
+                    </Col>
+                    <Col className="subHeaderLabel" md="3">
+                    <a href="#contact">Contact</a>
                     </Col>
                 </Row>
             </Col>
