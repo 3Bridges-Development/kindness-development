@@ -17,7 +17,7 @@ function Center() {
             <Col className="text" md="6">
                 <Row>
                     {/* <span>To Create a Safe Space, for youth, young adults, and adults with Disabilities. To ensure they have an opportunity to reach their highest levels of skill, purpose, dignity, and respect. Through commitment, advocacy, family, community, and partnerships. </span> */}
-                    <p>"Whe we feel love and kindness toward others, it not only makes others feel loved and cared for. But it helps us also to develop inner happiness and peace."</p>
+                    <p>"When we feel love and kindness toward others, it not only makes others feel loved and cared for. But it helps us also to develop inner happiness and peace."</p>
                     <p>-The 14th Dalai Lama</p>
                 </Row>
             </Col>

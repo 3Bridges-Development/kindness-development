@@ -20,7 +20,7 @@ function AboutUs() {
                     <p className="kindness">Programs</p>
                     <div>
                         <p className="programHeader">Job Readiness Program</p>
-                        <p>Will teach individuals using Soft Skills.Soft Skills are everyday interpersonal skills that job seekers need to succeed on the job. They include: Communicating clearly and appropriately, remembering work directions, working well with others and knowing how to solve problems. Hands on training; Individuals are directly involved in their learning. Individuals get direct hands on experience. Hands on learning is good for both mental and physical skills, for implementing task. These skills will help Youth/Young adults succeed in life no matter what situation occurs.</p>
+                        <p>Will teach individuals using Soft Skills. Soft Skills are everyday interpersonal skills that job seekers need to succeed on the job. They include: Communicating clearly and appropriately, remembering work directions, working well with others and knowing how to solve problems. Hands on training; Individuals are directly involved in their learning. Individuals get direct hands on experience. Hands on learning is good for both mental and physical skills, for implementing task. These skills will help Youth/Young adults succeed in life no matter what situation occurs.</p>
                         <p className="programHeader">Life Skills Program</p>
                         <p>Develop positive social skills and etiquettes. Become self confident. Self awareness. Self management. Communication and Collaboration. Stress management.</p>
                         <p className="programHeader">Sensory Space</p>
@@ -64,11 +64,11 @@ function AboutUs() {
                 </Row>
             </Col>
         </Row> */}
-        {/* <Row className="justify-content-center">
+        <Row className="justify-content-center">
             <Col md="6">
                 <Gallery />
             </Col>
-        </Row> */}
+        </Row>
     </Container>
     )
 }
