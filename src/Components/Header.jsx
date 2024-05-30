@@ -17,13 +17,13 @@ function Header() {
                     navbarScroll
                 >
                     <NavDropdown title="About Us" id="navbarScrollingDropdown">
-                        <NavDropdown.Item href="#mission">Mission and Vision</NavDropdown.Item>
                         <NavDropdown.Item href="#boardofdirectors"> 
                             Board of Directors 
                         </NavDropdown.Item>
                         <NavDropdown.Divider />
                     </NavDropdown>
                     <NavDropdown title="Services" id="navbarScrollingDropdown">
+                        <NavDropdown.Item href="#vision">Vision</NavDropdown.Item>
                         <NavDropdown.Item href="#plug">Plug</NavDropdown.Item>
                         {/* change the id for services once updated */}
                         <NavDropdown.Item href="#yees"> 

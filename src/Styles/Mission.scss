@@ -1,19 +1,24 @@
-.mission {
+.vision {
     padding-top: 50px;
     color: $red;
     font-size: 1.3rem;
     font-weight: 600;
 
-    #mission {
+    #vision {
         padding-bottom: 30px;
     }
 
     .text{
         padding-top: 10px;
         font-weight: 400;
+        align-content: center;
     }
 
     .visionSpan {
         padding-bottom: 10px;
+    }
+
+    .image {
+        align-content: center;
     }
 }

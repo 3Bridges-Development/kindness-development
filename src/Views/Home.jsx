@@ -5,47 +5,64 @@ import MainBlurb from "../Components/MainBlurb";
 import AboutUs from "../Components/AboutUs";
 import Center from "../Components/Center";
 import Footer from "../Components/Footer";
-import wave1 from "../Assets/wave1.png";
-import wave4 from "../Assets/wave4.png";
-import wave6 from "../Assets/wave6.png";
+// import wave6 from "../Assets/wave6.png";
 import cafe from "../Assets/cafeImage.jpeg";
 import Contact from "../Components/Contact";
+import newWaveBlue from "../Assets/newWaveBlue.png";
+import newWaveYellow from "../Assets/newWaveYellow.png";
+import newWave3 from "../Assets/newWave3.png";
+// import newWave2Rotate from "../Assets/newWave2Rotate.png";
+import wave4 from "../Assets/wave4.png";
 
 function Home() {
 
     const homeStyle = {
         backgroundImage:
             `url('${cafe}')`,
-        height: "90vh",
-        // marginTop: "-70px", // leaving as an example
-        backgroundPosition: "center",
+        minHeight: "70vh",
+        backgroundPosition: "center center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
     };
 
     const firstStyle = {
         backgroundImage:
-            `url('${wave1}')`,
-        height: "100vh",
-        backgroundPosition: "center",
+            `url('${newWaveYellow}')`,
+        minHeight: "100vh",
+        // minHeight: "100%",
+        backgroundPosition: "center center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
     };
 
     const secondStyle = {
+        // backgroundColor: "#607196"
         backgroundImage:
             `url('${wave4}')`,
-        height: "80vh",
-        backgroundPosition: "center",
+        minHeight: "100vh",
+        // minHeight: "100%",
+        backgroundPosition: "center top",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
     };
 
     const thirdStyle = {
+        // backgroundImage:
+        //     `url('${newWave2Rotate}')`,
+        // // height: "80vh",
+        // backgroundPosition: "center",
+        // backgroundSize: "cover",
+        // backgroundRepeat: "no-repeat",
+        // backgroundColor: "#EFE552"
+    };
+
+    const fourthStyle = {
+        // backgroundImage:
+        //     `url('${wave6}')`,
         backgroundImage:
-            `url('${wave6}')`,
-        height: "80vh",
-        backgroundPosition: "center",
+            `url('${newWave3}')`,
+        height: "100vh",
+        backgroundPosition: "center bottom",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
     };
@@ -56,14 +73,17 @@ function Home() {
             <div style={homeStyle}>
                 <MainBlurb />
             </div>
-            <div style={firstStyle}>
-                <Mission />
-            </div>
             <div style={secondStyle}>
                 <Center />
             </div>
-            <AboutUs />
             <div style={thirdStyle}>
+                <AboutUs />
+            </div>
+            {/* move to other page */}
+            <div style={firstStyle}>
+                <Mission />
+            </div>
+            <div style={fourthStyle}>
                 <Contact />
             </div>
             <Footer />
