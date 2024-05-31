@@ -1,6 +1,8 @@
 import './App.scss';
-import Home from './Views/Home';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
 import ThemeProvider from 'react-bootstrap/ThemeProvider';
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
@@ -9,7 +11,9 @@ function App() {
       minBreakpoint="xxs"
     >
       <div className="App">
-        <Home />
+        <Header />
+        <Outlet />
+        <Footer />
       </div>
     </ThemeProvider>
   );

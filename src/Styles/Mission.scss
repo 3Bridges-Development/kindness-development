@@ -1,16 +1,29 @@
-.mission {
+.vision {
     padding-top: 50px;
-    // would be nice to have curved yellow background
     color: $red;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 600;
 
-    #mission {
+    #vision {
         padding-bottom: 30px;
+    }
+
+    .visionRow{
+        padding-top: 10px;
+        background-color: rgba(239, 229, 91, 0.5);
     }
 
     .text{
         padding-top: 10px;
         font-weight: 400;
+        align-content: center;
+    }
+
+    .visionSpan {
+        padding-bottom: 10px;
+    }
+
+    .image {
+        align-content: center;
     }
 }

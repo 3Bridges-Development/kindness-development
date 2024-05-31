@@ -1,0 +1,40 @@
+.allServices {
+    padding-top: 50px;
+    color: $red;
+    font-size: 1.2rem;
+    font-weight: 600;
+    
+    .programs {
+        padding-bottom: 30px;
+        padding-top: 50px;
+    }
+    
+    .kindness {
+        font-size: 2rem;
+    }
+    
+    .programHeader {
+        font-weight: 800x;
+    }
+    
+    .programInfo {
+        font-weight: 400;
+    }
+    
+    .textPlug {
+        padding-bottom: 50px;
+    }
+    
+    .bioImage{
+        border-radius: 50%;
+        padding-bottom: 30px;
+    }
+    
+    .programsSection{
+        padding-top: 200px;
+    }
+    
+    .imageCol {
+        align-content: center;
+    }
+}
