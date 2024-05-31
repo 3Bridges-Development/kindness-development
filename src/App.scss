@@ -6,14 +6,14 @@
 @import "./Styles/Center.scss";
 @import "./Styles/MainBlurb.scss";
 @import "./Styles/Footer.scss";
-@import "./Styles//Contact.scss";
+@import "./Styles/Gallery.scss";
+@import "./Styles/Contact.scss";
+@import "./Styles/Programs.scss";
+@import "./Styles/AcademyInfo.scss";
+@import "./Styles/WaysToHelp.scss";
 
 .App {
   text-align: center;
-  font-family: $agencyFB;
-
-  .mainLogo{
-    border-radius: 100px;
-  }
+  font-family: $sedan;
 }
 

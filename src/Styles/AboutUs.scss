@@ -1,6 +1,5 @@
 .aboutus {
     padding-top: 50px;
-    // would be nice to have curved yellow background
     color: $red;
     font-size: 1.2rem;
     font-weight: 600;
@@ -12,5 +11,9 @@
     .text{
         padding-top: 10px;
         font-weight: 400;
+    }
+
+    .firstboardofdirectors {
+        padding-bottom: 100px;
     }
 }
