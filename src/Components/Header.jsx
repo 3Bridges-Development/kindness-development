@@ -3,12 +3,13 @@ import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Link } from "react-router-dom";
 
 function Header() {
     return (
         <Navbar expand="lg" className="bg-body-tertiary">
             <Container fluid>
-                <Navbar.Brand href="#mission">Kindness Developmental Center Inc.</Navbar.Brand>
+                <Navbar.Brand href="/">Kindness Developmental Center Inc.</Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                 <Nav
@@ -17,15 +18,19 @@ function Header() {
                     navbarScroll
                 >
                     <NavDropdown title="About Us" id="navbarScrollingDropdown">
-                        <NavDropdown.Item href="#boardofdirectors"> 
+                        <NavDropdown.Item href="/#boardofdirectors"> 
                             Board of Directors 
+                        </NavDropdown.Item>
+                        <NavDropdown.Item href="/#contact"> 
+                            Contact
                         </NavDropdown.Item>
                         <NavDropdown.Divider />
                     </NavDropdown>
+
+                    <Link to="services" relative="path">
                     <NavDropdown title="Services" id="navbarScrollingDropdown">
-                        <NavDropdown.Item href="#vision">Vision</NavDropdown.Item>
-                        <NavDropdown.Item href="#plug">Plug</NavDropdown.Item>
-                        {/* change the id for services once updated */}
+                        <NavDropdown.Item href="/services#vision">Vision</NavDropdown.Item>
+                        <NavDropdown.Item href="/services/#plug">Plug</NavDropdown.Item>
                         <NavDropdown.Item href="#yees"> 
                             YEES 
                         </NavDropdown.Item>
@@ -37,23 +42,23 @@ function Header() {
                         </NavDropdown.Item>
                         <NavDropdown.Divider />
                     </NavDropdown>
+
+                    </Link>
+
                     <NavDropdown title="The Academy" id="navbarScrollingDropdown">
-                        <NavDropdown.Item href="#academy">Broadcasting Training Program</NavDropdown.Item>
-                        {/* change the id for services once updated */}
-                        <NavDropdown.Item href="#futureinnovations"> 
+                        <NavDropdown.Item href="/academy">Broadcasting Training Program</NavDropdown.Item>
+                        <NavDropdown.Item href="/academy"> 
                             Future innovations
                         </NavDropdown.Item>
                         <NavDropdown.Divider />
                     </NavDropdown>
                     <NavDropdown title="Ways to Help" id="navbarScrollingDropdown">
-                        <NavDropdown.Item href="#aboutus">Individual Gifts</NavDropdown.Item>
-                        {/* change the id for services once updated */}
-                        <NavDropdown.Item href="#aboutus"> 
+                        <NavDropdown.Item href="/waysToHelp">Individual Gifts</NavDropdown.Item>
+                        <NavDropdown.Item href="/waysToHelp"> 
                             Endowments
                         </NavDropdown.Item>
                         <NavDropdown.Divider />
                     </NavDropdown>
-                    <Nav.Link href="#contact">Contact</Nav.Link>
                 </Nav>
                 </Navbar.Collapse>
             </Container>

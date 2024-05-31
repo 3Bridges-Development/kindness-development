@@ -1,5 +1,4 @@
 import React from "react";
-import kdclogo from "../Assets/kdclogo.png";
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -8,12 +7,7 @@ import cafe2 from "../Assets/cafe2.jpeg";
 function Center() {
     return (
     <Container className="center" id="thecenter">
-        {/* <Row>
-            <Col id="thecenter">
-                The Center
-            </Col>
-        </Row> */}
-        <Row>
+        <Row className="centerRow">
             <Col className="text" md="6">
                 <Row>
                     {/* <span>To Create a Safe Space, for youth, young adults, and adults with Disabilities. To ensure they have an opportunity to reach their highest levels of skill, purpose, dignity, and respect. Through commitment, advocacy, family, community, and partnerships. </span> */}

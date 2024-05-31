@@ -1,11 +1,16 @@
 .vision {
     padding-top: 50px;
     color: $red;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 600;
 
     #vision {
         padding-bottom: 30px;
+    }
+
+    .visionRow{
+        padding-top: 10px;
+        background-color: rgba(239, 229, 91, 0.5);
     }
 
     .text{
