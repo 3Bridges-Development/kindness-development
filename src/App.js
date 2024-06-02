@@ -32,7 +32,10 @@ query {
     items{
       programsAndEnrollment
     }
-  }
+  },
+  academyFutureInnovationsCollection{items{
+    futureInnovations
+  }}
   }
 `
 
