@@ -1,8 +1,8 @@
-import './App.scss';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import ThemeProvider from 'react-bootstrap/ThemeProvider';
 import { Outlet } from "react-router-dom";
+import './App.scss';
 
 function App() {
   return (
