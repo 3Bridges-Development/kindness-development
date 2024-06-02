@@ -19,8 +19,20 @@ query {
       width,
       height
     }},
-    socialMediaLinks
-  }}
+    socialMediaLinks,
+    aboutUsGeneralInfo
+  }},
+  servicesPageCollection{
+    items{
+      vision,
+      enrollmentEligibility
+    }
+  }, 
+  programsOnServicesPageCollection{
+    items{
+      programsAndEnrollment
+    }
+  }
   }
 `
 
@@ -40,6 +52,7 @@ function App() {
       breakpoints={['xxxl', 'xxl', 'xl', 'lg', 'md', 'sm', 'xs', 'xxs']}
       minBreakpoint="xxs"
     >
+      {console.log("data: ", data)}
       <div className="App">
         <Header />
         <Outlet context={data} />

@@ -7,7 +7,7 @@ const firstStyle = {
     backgroundImage:
         `url('${newWave2Rotate}')`,
     minHeight: "100vh",
-    backgroundPosition: "center center",
+    backgroundPosition: "center top",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
 };

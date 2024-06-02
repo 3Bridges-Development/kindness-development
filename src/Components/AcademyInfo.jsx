@@ -1,7 +1,6 @@
 import React from "react";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-// import brochure from "../Assets/thePlugBrochure.pdf";
 import plugIcon from "../Assets/plug.png";
 
 function AcademyInfo() {
@@ -26,12 +25,6 @@ function AcademyInfo() {
                         <Col md="3" className="imageCol">
                             <img width="100%" src={plugIcon} alt="plug" className="bioImage" />
                             <p>image of thinking character or icon</p>
-                        </Col>
-                    </Row>
-                    <Row className="justify-content-center" style={{paddingBottom: "50px", paddingTop: "50px"}}>
-                        <Col md="6" className="futureText" id="enrollment">
-                            <p className="programHeader">Enrollment Eligibility</p>
-                            <p className="programInfo">Text here</p>
                         </Col>
                     </Row>
                 </Col>
