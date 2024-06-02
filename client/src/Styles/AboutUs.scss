@@ -16,4 +16,22 @@
     .firstboardofdirectors {
         padding-bottom: 100px;
     }
+
+    .secondboardofdirectors {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+    
+    .imageCol {
+        display: flex;
+        
+        .imageDiv {
+            align-content: center;
+        }
+    }
+
+    .galleryRow {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
 }
