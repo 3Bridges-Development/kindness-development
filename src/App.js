@@ -3,8 +3,38 @@ import Header from './Components/Header';
 import Footer from './Components/Footer';
 import ThemeProvider from 'react-bootstrap/ThemeProvider';
 import { Outlet } from "react-router-dom";
+import UseContentful from './Hooks/use-contentful';
+
+const query = `
+query {
+  aboutPageCollection{items{
+    aboutMission,
+    theCenterQuoteAndText,
+    boardOfDirectorsText,
+    secondBoardOfDirectorsText,
+    aboutGalleryCollection{items{
+      title,
+      description,
+      url,
+      width,
+      height
+    }},
+    socialMediaLinks
+  }}
+  }
+`
 
 function App() {
+  let { data, errors } = UseContentful(query);
+
+  if (errors)
+    return (
+      <span style={{ color: "red" }}>
+        {errors.map((error) => error.message).join(",")}
+      </span>
+    );
+  if (!data) return <span></span>;
+
   return (
     <ThemeProvider
       breakpoints={['xxxl', 'xxl', 'xl', 'lg', 'md', 'sm', 'xs', 'xxs']}
@@ -12,7 +42,7 @@ function App() {
     >
       <div className="App">
         <Header />
-        <Outlet />
+        <Outlet context={data} />
         <Footer />
       </div>
     </ThemeProvider>
