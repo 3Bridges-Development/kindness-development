@@ -26,11 +26,11 @@ function Services() {
 
     return (
         <>
-            <div className="services" style={firstStyle}>
+            <div className="services" style={firstStyle} alt="Background image of yellow wave">
                 <Mission />
             </div>
             <Programs />
-            <section style={secondStyle}>
+            <section style={secondStyle} alt="Background image of yellow wave">
             </section>
         </>
     )
