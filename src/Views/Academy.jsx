@@ -25,10 +25,10 @@ function Academy() {
 
     return (
         <>
-            <div style={firstStyle}>
+            <div style={firstStyle} alt="Background image of blue wave">
                 <AcademyInfo />
             </div>
-            <section style={secondStyle}>
+            <section style={secondStyle} alt="Background image of blue wave">
             </section>
         </>
     )

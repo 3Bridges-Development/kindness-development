@@ -27,21 +27,10 @@ function Home() {
         backgroundRepeat: "no-repeat",
     };
 
-    // keeping in case I add image back in
-    // const thirdStyle = {
-    //     // backgroundImage:
-    //     //     `url('${newWave2Rotate}')`,
-    //     // // height: "80vh",
-    //     // backgroundPosition: "center",
-    //     // backgroundSize: "cover",
-    //     // backgroundRepeat: "no-repeat",
-    //     // backgroundColor: "#EFE552"
-    // };
-
     const fourthStyle = {
         backgroundImage:
             `url('${newWave3}')`,
-        height: "70vh",
+        height: "50vh",
         backgroundPosition: "center bottom",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
@@ -49,19 +38,20 @@ function Home() {
 
     return (
         <div className="home">
-            <div style={homeStyle}>
+            <div style={homeStyle} alt="Background image of girl sitting in cafe">
                 <MainBlurb />
             </div>
-            <div style={secondStyle}>
+            <div style={secondStyle} alt="Background image of blue wave">
                 <Center />
             </div>
-            {/* <div style={thirdStyle}> */}
             <div>
                 <AboutUs />
             </div>
-            <div style={fourthStyle}>
+            <div>
                 <Contact />
             </div>
+            <section style={fourthStyle} alt="Background image of blue wave">
+            </section>
         </div>
     )
 }
