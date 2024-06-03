@@ -35,6 +35,9 @@ query {
   },
   academyFutureInnovationsCollection{items{
     futureInnovations
+  }},
+  academyProgramsCollection{items{
+    academyPrograms
   }}
   }
 `
@@ -55,7 +58,6 @@ function App() {
       breakpoints={['xxxl', 'xxl', 'xl', 'lg', 'md', 'sm', 'xs', 'xxs']}
       minBreakpoint="xxs"
     >
-      {console.log("data: ", data)}
       <div className="App">
         <Header />
         <Outlet context={data} />
