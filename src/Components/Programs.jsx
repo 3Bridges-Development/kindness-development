@@ -28,7 +28,7 @@ function Programs() {
                     </Row>
                 </Col>
             </Row>
-            <Row className="justify-content-center programs">
+            <Row className="justify-content-center programs" id="programs">
                 <Col className="firstProgramText" md="10">
                     {data.programsOnServicesPageCollection.items ? (
                         data.programsOnServicesPageCollection.items.map(program => (
@@ -39,7 +39,7 @@ function Programs() {
                     ) : ""}
                 </Col>
             </Row>
-            <Row className="justify-content-center programs" id="plug">
+            <Row className="justify-content-center programs" id="enrollment">
                 <Col className="text" md="8">
                     <Row className="justify-content-center">
                         <Col className="textEnrollment" md="6">
