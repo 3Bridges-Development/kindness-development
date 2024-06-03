@@ -16,7 +16,7 @@ function AcademyInfo() {
                     <h1>The Academy</h1>
                 </Row> */}
                 <Col>
-                    <Row className="futureText justify-content-center">
+                    <Row className="futureText justify-content-center" id="currentPrograms">
                         <Col md="10">
                             {data.academyProgramsCollection.items ? (
                                 data.academyProgramsCollection.items.map(academyProgram => (
@@ -27,7 +27,7 @@ function AcademyInfo() {
                             ) : ""}
                         </Col>
                     </Row>
-                    <Row className="justify-content-center futureText">
+                    <Row className="justify-content-center futureText" id="futureInnovations">
                         <Col className="firstProgramText" md="10">
                             <Row className="justify-content-center" style={{paddingBottom: "50px", paddingTop: "100px"}}>
                                 <Col md="9" className="futureText" id="futureinnovations">
