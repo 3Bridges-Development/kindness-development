@@ -19,7 +19,25 @@ query {
       width,
       height
     }},
-    socialMediaLinks
+    socialMediaLinks,
+    aboutUsGeneralInfo
+  }},
+  servicesPageCollection{
+    items{
+      vision,
+      enrollmentEligibility
+    }
+  }, 
+  programsOnServicesPageCollection{
+    items{
+      programsAndEnrollment
+    }
+  },
+  academyFutureInnovationsCollection{items{
+    futureInnovations
+  }},
+  academyProgramsCollection{items{
+    academyPrograms
   }}
   }
 `
