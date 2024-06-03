@@ -27,15 +27,15 @@ function Header() {
                     </NavDropdown>
 
                     <NavDropdown title="Services" id="navbarScrollingDropdown">
-                        <NavDropdown.Item href="/services#vision">Vision</NavDropdown.Item>
-                        <NavDropdown.Item href="/services/#plug">Plug</NavDropdown.Item>
-                        <NavDropdown.Item href="#yees"> 
+                        <NavDropdown.Item href="/services">Vision</NavDropdown.Item>
+                        <NavDropdown.Item href="/services">Plug</NavDropdown.Item>
+                        <NavDropdown.Item href="/services"> 
                             YEES 
                         </NavDropdown.Item>
-                        <NavDropdown.Item href="#summerservices"> 
+                        <NavDropdown.Item href="/services"> 
                             Summer Services
                         </NavDropdown.Item>
-                        <NavDropdown.Item href="#enrollment"> 
+                        <NavDropdown.Item href="/services"> 
                             Enrollment Eligibility
                         </NavDropdown.Item>
                         <NavDropdown.Divider />
