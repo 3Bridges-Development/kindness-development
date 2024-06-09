@@ -13,12 +13,12 @@ function Programs() {
         <section className="allServices">
             <Row className="justify-content-center programs" id="plug">
                 <Col className="text" md="8">
-                    <Row className="justify-content-center plug">
+                    <Row className="justify-content-center">
                         <Col className="textPlug" md="6">
                             <Row width="40%">
                                 <p className="kindness">PLUG</p>
                                 <a href={brochure} target="_blank" rel="noopener noreferrer" className="plugLink"> 
-                                    <p className="plugText">Parents Live Ultimate Guide</p>
+                                    <p className="plugText">Parents Life Ultimate Guide</p>
                                 </a>
                                 <a href={brochure} target="_blank" rel="noopener noreferrer" > 
                                     <img width="100%" src={plugIcon} alt="plug" />
@@ -28,7 +28,7 @@ function Programs() {
                     </Row>
                 </Col>
             </Row>
-            <Row className="justify-content-center programs" id="programs">
+            <Row className="justify-content-center programs" id="thePrograms">
                 <Col className="firstProgramText" md="10">
                     {data.programsOnServicesPageCollection.items ? (
                         data.programsOnServicesPageCollection.items.map(program => (

@@ -28,22 +28,16 @@ function Header() {
 
                     <NavDropdown title="Services" id="navbarScrollingDropdown">
                         <NavDropdown.Item href="/services">
-                            <HashLink to="/services/#vision">Vision</HashLink>
+                            <HashLink to="/services/#theVision">Vision</HashLink>
                         </NavDropdown.Item>
                         <NavDropdown.Item href="/services">
                             <HashLink to="/services/#plug">Plug</HashLink>
                         </NavDropdown.Item>
                         <NavDropdown.Item href="/services">
-                            <HashLink to="/services/#programs">Programs</HashLink>
-                        </NavDropdown.Item>
-                        {/* <NavDropdown.Item href="/services"> 
-                            <HashLink to="/services/#programs">YEES</HashLink>
+                            <HashLink to="/services/#thePrograms">Programs</HashLink>
                         </NavDropdown.Item>
                         <NavDropdown.Item href="/services"> 
-                            <HashLink to="/services/#programs">Summer Services</HashLink>
-                        </NavDropdown.Item> */}
-                        <NavDropdown.Item href="/services"> 
-                            <HashLink to="/services/#plug">Enrollment Eligibility</HashLink>
+                            <HashLink to="/services/#enrollment">Enrollment Eligibility</HashLink>
                         </NavDropdown.Item>
                     </NavDropdown>
 
@@ -55,10 +49,10 @@ function Header() {
                             <HashLink to="/academy/#futureInnovations">Future innovations</HashLink>
                         </NavDropdown.Item>
                     </NavDropdown>
+
                     <NavDropdown title="Ways to Help" id="navbarScrollingDropdown">
-                        <NavDropdown.Item href="/waysToHelp">Individual Gifts</NavDropdown.Item>
-                        <NavDropdown.Item href="/waysToHelp"> 
-                            Endowments
+                        <NavDropdown.Item href="/waysToHelp">
+                            <HashLink to="/waysToHelp/#howToHelp">Individual Gifts and Endowments</HashLink>
                         </NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
