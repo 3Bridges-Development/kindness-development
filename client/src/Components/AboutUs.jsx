@@ -7,6 +7,7 @@ import { useOutletContext } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import DeloresW from "../Assets/DeloresW.png";
 import JuanitaG from "../Assets/JuanitaG.png";
+import CenterInfo from "../Components/CenterInfo";
 
 function AboutUs() {
     const data = useOutletContext();
@@ -14,6 +15,7 @@ function AboutUs() {
     return (
     <Container className="aboutus" id="aboutus">
         <Row className="justify-content-center" id="boardofdirectors">
+            <CenterInfo />
             <Col className="firstboardofdirectors" md="10">
                 <Row>
                     <Col md="3" className="imageCol">

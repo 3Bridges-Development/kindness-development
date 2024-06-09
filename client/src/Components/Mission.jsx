@@ -9,16 +9,14 @@ function Mission() {
   const data = useOutletContext();
 
     return (
-        <Container className="vision" id="vision">
+        <Container className="vision" id="theVision">
             <Row className="visionRow">
                 <Col className="image" md="4">
                     <img src={kdclogo} width="60%" alt="circle with kindness developmental center inc" className="mainLogo"/>
                 </Col>
                 <Col className="text" md="8">
-                    {data.aboutPageCollection.items[0].aboutMission ? (
-                        <Row>
-                            {/* <p className="visionSpan">{data.aboutPageCollection[0].aboutMission}</p> */}
-                        </Row>
+                    {data.servicesPageCollection.items[0].vision ? (
+                        data.servicesPageCollection.items[0].vision
                     ): ""}
                 </Col>
             </Row>

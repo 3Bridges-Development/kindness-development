@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { HashLink } from 'react-router-hash-link';
 
 function Header() {
     return (
@@ -17,43 +18,42 @@ function Header() {
                     navbarScroll
                 >
                     <NavDropdown title="About Us" id="navbarScrollingDropdown">
-                        <NavDropdown.Item href="/#boardofdirectors"> 
-                            Board of Directors 
+                        <NavDropdown.Item href="/"> 
+                            <HashLink to="/#boardofdirectors">Board of Directors</HashLink>
                         </NavDropdown.Item>
-                        <NavDropdown.Item href="/#contact"> 
-                            Contact
+                        <NavDropdown.Item href="/"> 
+                            <HashLink to="/#contact">Contact</HashLink>
                         </NavDropdown.Item>
-                        <NavDropdown.Divider />
                     </NavDropdown>
 
                     <NavDropdown title="Services" id="navbarScrollingDropdown">
-                        <NavDropdown.Item href="/services#vision">Vision</NavDropdown.Item>
-                        <NavDropdown.Item href="/services/#plug">Plug</NavDropdown.Item>
-                        <NavDropdown.Item href="#yees"> 
-                            YEES 
+                        <NavDropdown.Item href="/services">
+                            <HashLink to="/services/#theVision">Vision</HashLink>
                         </NavDropdown.Item>
-                        <NavDropdown.Item href="#summerservices"> 
-                            Summer Services
+                        <NavDropdown.Item href="/services">
+                            <HashLink to="/services/#plug">Plug</HashLink>
                         </NavDropdown.Item>
-                        <NavDropdown.Item href="#enrollment"> 
-                            Enrollment Eligibility
+                        <NavDropdown.Item href="/services">
+                            <HashLink to="/services/#thePrograms">Programs</HashLink>
                         </NavDropdown.Item>
-                        <NavDropdown.Divider />
+                        <NavDropdown.Item href="/services"> 
+                            <HashLink to="/services/#enrollment">Enrollment Eligibility</HashLink>
+                        </NavDropdown.Item>
                     </NavDropdown>
 
                     <NavDropdown title="The Academy" id="navbarScrollingDropdown">
-                        <NavDropdown.Item href="/academy">Broadcasting Training Program</NavDropdown.Item>
-                        <NavDropdown.Item href="/academy"> 
-                            Future innovations
+                        <NavDropdown.Item href="/academy">
+                            <HashLink to="/academy/#currentPrograms">Broadcasting Training Program</HashLink>
                         </NavDropdown.Item>
-                        <NavDropdown.Divider />
+                        <NavDropdown.Item href="/academy">
+                            <HashLink to="/academy/#futureInnovations">Future innovations</HashLink>
+                        </NavDropdown.Item>
                     </NavDropdown>
+
                     <NavDropdown title="Ways to Help" id="navbarScrollingDropdown">
-                        <NavDropdown.Item href="/waysToHelp">Individual Gifts</NavDropdown.Item>
-                        <NavDropdown.Item href="/waysToHelp"> 
-                            Endowments
+                        <NavDropdown.Item href="/waysToHelp">
+                            <HashLink to="/waysToHelp/#howToHelp">Individual Gifts and Endowments</HashLink>
                         </NavDropdown.Item>
-                        <NavDropdown.Divider />
                     </NavDropdown>
                 </Nav>
                 </Navbar.Collapse>

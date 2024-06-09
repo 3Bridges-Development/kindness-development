@@ -11,34 +11,27 @@ import WaysToHelp from './Views/WaysToHelp';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "",
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "",
+        path: "/",
         element: <Home />,
         errorElement: <ErrorPage />,
-        // this may be a solution for the #
-        // children: [
-        //   {
-        //     path: "#boardofdirectors",
-        //     element: <Home />
-        //   }
-        // ]
       },
       {
-        path: "services",
+        path: "/services",
         element: <Services />,
         errorElement: <ErrorPage />,
       },
       {
-        path: "academy",
+        path: "/academy",
         element: <Academy />,
         errorElement: <ErrorPage />,
       },
       {
-        path: "waysToHelp",
+        path: "/waysToHelp",
         element: <WaysToHelp />,
         errorElement: <ErrorPage />,
       },
