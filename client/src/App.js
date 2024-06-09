@@ -1,9 +1,12 @@
-import Header from './Components/Header';
-import Footer from './Components/Footer';
 import ThemeProvider from 'react-bootstrap/ThemeProvider';
 import { Outlet } from "react-router-dom";
-import './App.scss';
 import UseContentful from './Hooks/use-contentful';
+
+import Header from './Components/Header';
+import Footer from './Components/Footer';
+
+
+import './App.scss';
 
 const query = `
 query {
@@ -39,7 +42,7 @@ query {
   academyProgramsCollection{items{
     academyPrograms
   }}
-  }
+}
 `
 
 function App() {

@@ -28,8 +28,8 @@ function Academy() {
             <div style={firstStyle} alt="Background image of blue wave">
                 <AcademyInfo />
             </div>
-            <section style={secondStyle} alt="Background image of blue wave">
-            </section>
+            <div style={secondStyle} alt="Background image of blue wave">
+            </div>
         </>
     )
 }
