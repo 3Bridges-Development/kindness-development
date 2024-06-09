@@ -28,7 +28,7 @@ function WaysToHelp() {
     return (
         <>
             {/* <section className="theWaysToHelp" style={firstStyle}> */}
-            <section className="theWaysToHelp">
+            <section className="theWaysToHelp" id="howToHelp">
                 <p>Ways to Help - Coming Soon...</p>
             </section>
             <section style={secondStyle}>
