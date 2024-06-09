@@ -30,7 +30,7 @@ function AcademyInfo() {
                     <Row className="justify-content-center futureText" id="futureInnovations">
                         <Col className="firstProgramText" md="10">
                             <Row className="justify-content-center" style={{paddingBottom: "50px", paddingTop: "100px"}}>
-                                <Col md="9" className="futureText" id="futureinnovations">
+                                <Col md="9" className="futureText">
                                 {data.academyFutureInnovationsCollection.items ? (
                                     data.academyFutureInnovationsCollection.items.map(futureProgram => (
                                         <ReactMarkdown key={futureProgram.futureInnovations}>
