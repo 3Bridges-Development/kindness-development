@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import App from './App';
 import ErrorPage from "./error-page";
 import Home from "./Views/Home";
 import Services from "./Views/Services";
 import Academy from "./Views/Academy";
 import WaysToHelp from './Views/WaysToHelp';
+import CheckoutForm from './Components/CheckoutForm'
+import './index.css';
+
+
+
 
 const router = createBrowserRouter([
   {
@@ -32,7 +36,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/waysToHelp",
-        element: <WaysToHelp />,
+        element: <CheckoutForm />,
         errorElement: <ErrorPage />,
       },
     ],

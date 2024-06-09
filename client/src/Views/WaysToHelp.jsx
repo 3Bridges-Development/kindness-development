@@ -1,4 +1,5 @@
 import React from "react";
+import CheckoutForm from "../Components/CheckoutForm";
 import newWave1 from "../Assets/newWave1.png";
 // import wave5 from "../Assets/wave5.png";
 
@@ -29,7 +30,8 @@ function WaysToHelp() {
         <>
             {/* <section className="theWaysToHelp" style={firstStyle}> */}
             <section className="theWaysToHelp" id="howToHelp">
-                <p>Ways to Help - Coming Soon...</p>
+                {/* <p>Ways to Help - Coming Soon...</p> */}
+                <CheckoutForm />
             </section>
             <section style={secondStyle}>
             </section>
