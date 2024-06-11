@@ -4,10 +4,12 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { HashLink } from 'react-router-hash-link';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 function Header() {
     return (
-        <Navbar expand="lg" className="bg-body-tertiary">
+        <Navbar expand="lg" className="bg-body-tertiary header">
             <Container fluid>
                 <Navbar.Brand href="/">Kindness Developmental Center Inc.</Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
@@ -18,42 +20,60 @@ function Header() {
                     navbarScroll
                 >
                     <NavDropdown title="About Us" id="navbarScrollingDropdown">
-                        <NavDropdown.Item href="/"> 
-                            <HashLink to="/#boardofdirectors">Board of Directors</HashLink>
-                        </NavDropdown.Item>
-                        <NavDropdown.Item href="/"> 
-                            <HashLink to="/#contact">Contact</HashLink>
-                        </NavDropdown.Item>
+                        <Row className="justify-content-center">
+                            <Col>
+                                <HashLink to="/#boardofdirectors" className="navBarText">Board of Directors</HashLink>
+                            </Col>
+                        </Row>
+                        <Row className="justify-content-center">
+                            <Col>
+                                <HashLink to="/#contact" className="navBarText">Contact</HashLink>
+                            </Col>
+                        </Row>
                     </NavDropdown>
 
                     <NavDropdown title="Services" id="navbarScrollingDropdown">
-                        <NavDropdown.Item href="/services">
-                            <HashLink to="/services/#theVision">Vision</HashLink>
-                        </NavDropdown.Item>
-                        <NavDropdown.Item href="/services">
-                            <HashLink to="/services/#plug">Plug</HashLink>
-                        </NavDropdown.Item>
-                        <NavDropdown.Item href="/services">
-                            <HashLink to="/services/#thePrograms">Programs</HashLink>
-                        </NavDropdown.Item>
-                        <NavDropdown.Item href="/services"> 
-                            <HashLink to="/services/#enrollment">Enrollment Eligibility</HashLink>
-                        </NavDropdown.Item>
+                        <Row className="justify-content-center">
+                            <Col>
+                                <HashLink to="/services/#theVision" className="navBarText">Vision</HashLink>
+                            </Col>
+                        </Row>
+                        <Row className="justify-content-center">
+                            <Col>
+                                <HashLink to="/services/#plug" className="navBarText">Plug</HashLink>
+                            </Col>
+                        </Row>
+                        <Row className="justify-content-center">
+                            <Col>
+                                <HashLink to="/services/#thePrograms" className="navBarText">Programs</HashLink>
+                            </Col>
+                        </Row>
+                        <Row className="justify-content-center">
+                            <Col>
+                                <HashLink to="/services/#enrollment" className="navBarText">Enrollment Eligibility</HashLink>
+                            </Col>
+                        </Row>
                     </NavDropdown>
 
                     <NavDropdown title="The Academy" id="navbarScrollingDropdown">
-                        <NavDropdown.Item href="/academy">
-                            <HashLink to="/academy/#currentPrograms">Broadcasting Training Program</HashLink>
-                        </NavDropdown.Item>
-                        <NavDropdown.Item href="/academy">
-                            <HashLink to="/academy/#futureInnovations">Future innovations</HashLink>
-                        </NavDropdown.Item>
+                        <Row className="justify-content-center">
+                            <Col>
+                                <HashLink to="/academy/#currentPrograms" className="navBarText">Broadcasting Training Program</HashLink>
+                            </Col>
+                        </Row>
+                        <Row className="justify-content-center">
+                            <Col>
+                                <HashLink to="/academy/#futureInnovations" className="navBarText">Future innovations</HashLink>
+                            </Col>
+                        </Row>
                     </NavDropdown>
 
                     <NavDropdown title="Ways to Help" id="navbarScrollingDropdown">
-                        <NavDropdown.Item href="/waysToHelp">
-                            <HashLink to="/waysToHelp/#howToHelp">Individual Gifts and Endowments</HashLink>
-                        </NavDropdown.Item>
+                        <Row className="justify-content-center">
+                            <Col>
+                                <HashLink to="/waysToHelp/#howToHelp" className="navBarText">Individual Gifts and Endowments</HashLink>
+                            </Col>
+                        </Row>
                     </NavDropdown>
                 </Nav>
                 </Navbar.Collapse>
