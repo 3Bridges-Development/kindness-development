@@ -1,7 +1,7 @@
 import React from "react";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import brochure from "../Assets/thePlugBrochure.pdf";
+import brochure from "../Assets/Brochure.pdf";
 import plugIcon from "../Assets/plug.png";
 import { useOutletContext } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
@@ -18,7 +18,7 @@ function Programs() {
                             <Row width="40%">
                                 <p className="kindness">PLUG</p>
                                 <a href={brochure} target="_blank" rel="noopener noreferrer" className="plugLink"> 
-                                    <p className="plugText">Parents Life Ultimate Guide</p>
+                                    <p className="plugText">Parents Life's Ultimate Guide</p>
                                 </a>
                                 <a href={brochure} target="_blank" rel="noopener noreferrer" > 
                                     <img width="100%" src={plugIcon} alt="plug" />
