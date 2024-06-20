@@ -20,12 +20,12 @@ function Header() {
                     navbarScroll
                 >
                     <NavDropdown title="About Us" id="navbarScrollingDropdown">
-                        <Row className="justify-content-center">
+                        <Row className="justify-content-center navRow">
                             <Col>
                                 <HashLink to="/#boardofdirectors" className="navBarText">Board of Directors</HashLink>
                             </Col>
                         </Row>
-                        <Row className="justify-content-center">
+                        <Row className="justify-content-center navRow">
                             <Col>
                                 <HashLink to="/#contact" className="navBarText">Contact</HashLink>
                             </Col>
@@ -33,22 +33,22 @@ function Header() {
                     </NavDropdown>
 
                     <NavDropdown title="Services" id="navbarScrollingDropdown">
-                        <Row className="justify-content-center">
+                        <Row className="justify-content-center navRow">
                             <Col>
                                 <HashLink to="/services/#theVision" className="navBarText">Vision</HashLink>
                             </Col>
                         </Row>
-                        <Row className="justify-content-center">
+                        <Row className="justify-content-center navRow">
                             <Col>
                                 <HashLink to="/services/#plug" className="navBarText">Plug</HashLink>
                             </Col>
                         </Row>
-                        <Row className="justify-content-center">
+                        <Row className="justify-content-center navRow">
                             <Col>
                                 <HashLink to="/services/#thePrograms" className="navBarText">Programs</HashLink>
                             </Col>
                         </Row>
-                        <Row className="justify-content-center">
+                        <Row className="justify-content-center navRow">
                             <Col>
                                 <HashLink to="/services/#enrollment" className="navBarText">Enrollment Eligibility</HashLink>
                             </Col>
@@ -56,12 +56,12 @@ function Header() {
                     </NavDropdown>
 
                     <NavDropdown title="The Academy" id="navbarScrollingDropdown">
-                        <Row className="justify-content-center">
+                        {/* <Row className="justify-content-center">
                             <Col>
                                 <HashLink to="/academy/#currentPrograms" className="navBarText">Broadcasting Training Program</HashLink>
                             </Col>
-                        </Row>
-                        <Row className="justify-content-center">
+                        </Row> */}
+                        <Row className="justify-content-center navRow">
                             <Col>
                                 <HashLink to="/academy/#futureInnovations" className="navBarText">Future innovations</HashLink>
                             </Col>
@@ -69,7 +69,7 @@ function Header() {
                     </NavDropdown>
 
                     <NavDropdown title="Ways to Help" id="navbarScrollingDropdown">
-                        <Row className="justify-content-center">
+                        <Row className="justify-content-center navRow">
                             <Col>
                                 <HashLink to="/waysToHelp/#howToHelp" className="navBarText">Individual Gifts and Endowments</HashLink>
                             </Col>
