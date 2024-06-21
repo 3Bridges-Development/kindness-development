@@ -12,14 +12,15 @@ function AcademyInfo() {
     return (
         <section className="academyInfo">
             <Row className="justify-content-center" id="academy" style={{paddingTop: "250px"}}>
+                <Row className="galleryRow justify-content-center" style={{paddingBottom: "100px"}}>
+                    <Col md="6">
+                        <Gallery />
+                    </Col>
+                </Row>
                 <Row>
                     <Col>
-                        <Row className="futureText">
-                            <h1>Future Innovations</h1>
-                        </Row>
-                        {/* commenting in case we need to use this in the future */}
-                        {/* <Row className="futureText justify-content-center" id="currentPrograms">
-                            <Col md="10">
+                        <Row className="futureText justify-content-center" id="curriculum">
+                            <Col md="8">
                                 {data.academyProgramsCollection.items ? (
                                     data.academyProgramsCollection.items.map(academyProgram => (
                                         <ReactMarkdown key={academyProgram.academyPrograms}>
@@ -28,7 +29,7 @@ function AcademyInfo() {
                                     ))
                                 ) : ""}
                             </Col>
-                        </Row> */}
+                        </Row>
                         <Row className="justify-content-center futureText" id="futureInnovations">
                             <Col className="firstProgramText" md="10">
                                 <Row className="justify-content-center" style={{paddingBottom: "150px", paddingTop: "100px"}}>
@@ -43,17 +44,11 @@ function AcademyInfo() {
                                     </Col>
                                     <Col md="3" className="imageCol">
                                         <Row><img width="100%" src={building1} alt="Buildings being built in a city" className="futureInnovationsImage" /></Row>
-                                        {/* leaving in case customer wants this */}
-                                        {/* <Row><span>Future Innovations</span></Row> */}
+                                        <Row><span>Future Innovations</span></Row>
                                     </Col>
                                 </Row>
                             </Col>
                         </Row>
-                    </Col>
-                </Row>
-                <Row className="galleryRow justify-content-center">
-                    <Col md="6">
-                        <Gallery />
                     </Col>
                 </Row>
             </Row>

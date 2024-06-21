@@ -56,11 +56,11 @@ function Header() {
                     </NavDropdown>
 
                     <NavDropdown title="The Academy" id="navbarScrollingDropdown">
-                        {/* <Row className="justify-content-center">
+                        <Row className="justify-content-center navRow">
                             <Col>
-                                <HashLink to="/academy/#currentPrograms" className="navBarText">Broadcasting Training Program</HashLink>
+                                <HashLink to="/academy/#curriculum" className="navBarText">Curriculum</HashLink>
                             </Col>
-                        </Row> */}
+                        </Row>
                         <Row className="justify-content-center navRow">
                             <Col>
                                 <HashLink to="/academy/#futureInnovations" className="navBarText">Future innovations</HashLink>

@@ -42,7 +42,7 @@ function Programs() {
             <Row className="justify-content-center programs" id="enrollment">
                 <Col className="text" md="8">
                     <Row className="justify-content-center">
-                        <Col className="textEnrollment" md="6">
+                        <Col className="textEnrollment" md="8">
                             {data.servicesPageCollection.items[0].enrollmentEligibility ? (
                                 <ReactMarkdown>
                                     {data.servicesPageCollection.items[0].enrollmentEligibility}
