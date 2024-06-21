@@ -1,12 +1,13 @@
 @import './Variables.scss';
 
 .header {
-    .navbar-brand {
-        color: $red !important;
-    }
     
     .navBarText {
         padding: 15px;
         text-wrap: nowrap;
+    }
+
+    .navRow {
+        padding: 5px;
     }
 }

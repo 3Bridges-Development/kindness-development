@@ -2,7 +2,6 @@ import React from "react";
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Gallery from "./Gallery";
 import { useOutletContext } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import DeloresW from "../Assets/DeloresW.png";
@@ -49,11 +48,6 @@ function AboutUs() {
                             </Col>
                         ) : ""}
                 </Row>
-            </Col>
-        </Row>
-        <Row className="galleryRow justify-content-center">
-            <Col md="10">
-                <Gallery />
             </Col>
         </Row>
     </Container>
