@@ -36,9 +36,10 @@ const {paymentsApi} = new Client({
         });
       
         console.log("response", response.result.payment.status);
+        console.log("response in back end", response.result);
         /* global BigInt */
         BigInt.prototype.toJSON = function() { return this.toString(); }
-        res.send(response);
+        res.send(response.body);
       } catch(error) {
         console.log("error", error);
         return error;
@@ -46,8 +47,7 @@ const {paymentsApi} = new Client({
   }
 
 app.post('/donate', async (req, res) => {
-    const paymentResponse = handler(req, res);
-    // console.log("paymentResponse", paymentResponse)
+    handler(req, res);
 });
   
  

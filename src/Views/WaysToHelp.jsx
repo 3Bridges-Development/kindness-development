@@ -1,6 +1,7 @@
 import React from "react";
+import { useState } from "react";
 import newWave1 from "../Assets/newWave1.png";
-import { PaymentForm, CreditCard } from "react-square-web-payments-sdk";
+import { PaymentForm, CreditCard, ApplePay, GooglePay } from "react-square-web-payments-sdk";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 // import wave5 from "../Assets/wave5.png";
@@ -29,9 +30,12 @@ const secondStyle = {
 // const DOMAIN = window.location.href
 
 function WaysToHelp() {
+    let [squareData, setSquareData] = useState(null);
 
     return (
         <>
+        {console.log("square response: ", squareData) } 
+        {/* // probably need an useEffect */}
             {/* <section style={firstStyle}>
             </section> */}
             {/* <div className="paymentContainer theWaysToHelp" id="howToHelp" style={firstStyle}> */}
@@ -64,16 +68,24 @@ function WaysToHelp() {
                                 // mode: "no-cors",
                             })
 
-                            console.log("response in front end", response)
                             if (response.ok) {
-                                console.log(response.json());
-                                return response.json();
+                                setSquareData(await response.json());
                             } else {
                                 console.log("there was an error with the payment")
                             }
                         }}
                         locationId='L67RFFDB8KKW2'
+                        createPaymentRequest={() => ({
+                            countryCode: "US",
+                            currencyCode: "USD",
+                            total: {
+                              amount: "1.00",
+                              label: "Total",
+                            },
+                          })}
                     >
+                        <ApplePay />
+                        <GooglePay />
                         <CreditCard 
                             buttonProps={{
                                 css: {
