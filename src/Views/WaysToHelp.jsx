@@ -27,10 +27,11 @@ const secondStyle = {
     backgroundRepeat: "no-repeat",
 };
 
-// const DOMAIN = window.location.href
+// const DOMAIN = window.location.host
 
 function WaysToHelp() {
     let [squareData, setSquareData] = useState(null);
+    // console.log("domain", DOMAIN)
 
     return (
         <>
@@ -56,16 +57,12 @@ function WaysToHelp() {
                                 locationId: "L67RFFDB8KKW2"
                             })
 
-                            const response = await fetch("http://localhost:4000/donate", {
-                            // const response = await fetch("https://connect.squareupsandbox.com/v2/payments", {
-                            // const response = await fetch(`${DOMAIN}/donate`, {
-                            // const response = await fetch(`/donate`, {
+                            const response = await fetch(`/donate`, {
                                 method: "POST",
                                 headers: {
                                 "Content-type": "application/json",
                                 },
                                 body,
-                                // mode: "no-cors",
                             })
 
                             if (response.ok) {
