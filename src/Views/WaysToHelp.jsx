@@ -29,9 +29,13 @@ const secondStyle = {
 
 // const DOMAIN = window.location.host
 
+
 function WaysToHelp() {
     let [squareData, setSquareData] = useState(null);
     // console.log("domain", DOMAIN)
+    // const onClick = () => {
+    //     console.log("button was clicked!")
+    //   };
 
     return (
         <>
@@ -46,6 +50,7 @@ function WaysToHelp() {
                     {/* <object type="text/html" data="https://checkout.square.site/merchant/MLQYBX1S3ZQY8/checkout/U4QVTIB4QKTJKNQTIBYNDH3C" width="800px" height="800px">
 
                     </object> */}
+                    <h1>Donation</h1>
                     <PaymentForm 
                         applicationId="sandbox-sq0idb-M6GKByXppqVLCcyxjRLhTQ"
                         cardTokenizeResponseReceived={async (token, verifiedBuyer) => {
@@ -54,7 +59,15 @@ function WaysToHelp() {
 
                             const body = JSON.stringify({
                                 sourceId: token.token,
-                                locationId: "L67RFFDB8KKW2"
+                                locationId: "L67RFFDB8KKW2",
+                                verificationToken: verifiedBuyer,
+                                billingContact: {
+                                          addressLines: ['123 Main Street', 'Apartment 1'],
+                                          familyName: 'Doe',
+                                          givenName: 'John',
+                                          countryCode: 'US',
+                                          city: 'Portsmouth',
+                                        },
                             })
 
                             const response = await fetch(`/donate`, {
@@ -80,9 +93,22 @@ function WaysToHelp() {
                               label: "Total",
                             },
                           })}
+                        // createVerificationDetails={() => ({
+                        //     amount: '1.00',
+                        //     /* collected from the buyer */
+                        //     billingContact: {
+                        //       addressLines: ['123 Main Street', 'Apartment 1'],
+                        //       familyName: 'Doe',
+                        //       givenName: 'John',
+                        //       countryCode: 'US',
+                        //       city: 'Portsmouth',
+                        //     },
+                        //     currencyCode: 'USD',
+                        //     intent: 'CHARGE',
+                        //   })}
                     >
-                        <ApplePay />
-                        <GooglePay />
+                        {/* <ApplePay />
+                        <GooglePay /> */}
                         <CreditCard 
                             buttonProps={{
                                 css: {
@@ -92,6 +118,8 @@ function WaysToHelp() {
                                     backgroundColor: "#530f16",
                                 },
                                 },
+                                isLoading: false,
+                                // onClick: onClick,
                             }}
                         />
                     </PaymentForm>

@@ -22,7 +22,7 @@ const {paymentsApi} = new Client({
     try {
         const response = await paymentsApi.createPayment({
           locationId: req.locationId,
-        //   sourceId: req.sourceId,
+          // sourceId: req.sourceId,
         // Need to change sourceId
           sourceId: "cnon:card-nonce-ok",
           idempotencyKey: randomUUID(),
