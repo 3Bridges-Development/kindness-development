@@ -40,51 +40,58 @@ function WaysToHelp() {
     return (
         <>
         {console.log("square response: ", squareData) } 
-        {/* // probably need an useEffect */}
-            {/* <section style={firstStyle}>
-            </section> */}
-            {/* <div className="paymentContainer theWaysToHelp" id="howToHelp" style={firstStyle}> */}
             <Row className="paymentContainer theWaysToHelp" id="howToHelp">
                 <Col md="12 justify-content-center">
-                    {/* the below is using the url */}
-                    {/* <object type="text/html" data="https://checkout.square.site/merchant/MLQYBX1S3ZQY8/checkout/U4QVTIB4QKTJKNQTIBYNDH3C" width="800px" height="800px">
+                    <h1>Donate Now</h1>
+                    <p><i class="fas fa-lock"></i> Secured by Square</p>
+                    <form>
+                        <label for="firstName">First Name:</label>
+                        <input type="text" id="firstName" name="firstName"></input>
+                        <label for="lastName">Last Name:</label>
+                        <input type="text" id="lastName" name="lastName"></input>
+                        {/* add amount, address, and optional note, then send it to backend */}
+                    </form>
 
-                    </object> */}
-                    <h1>Donation</h1>
                     <PaymentForm 
                         applicationId="sandbox-sq0idb-M6GKByXppqVLCcyxjRLhTQ"
+                        locationId='L67RFFDB8KKW2'
                         cardTokenizeResponseReceived={async (token, verifiedBuyer) => {
-                            console.log('token:', token);
-                            console.log('verifiedBuyer:', verifiedBuyer);
-
+                            
                             const body = JSON.stringify({
                                 sourceId: token.token,
                                 locationId: "L67RFFDB8KKW2",
                                 verificationToken: verifiedBuyer,
-                                billingContact: {
-                                          addressLines: ['123 Main Street', 'Apartment 1'],
-                                          familyName: 'Doe',
-                                          givenName: 'John',
-                                          countryCode: 'US',
-                                          city: 'Portsmouth',
-                                        },
-                            })
-
+                                amount: {
+                                    amount: 50,
+                                    currency: 'USD'
+                                },
+                                billingInfo: {
+                                    address_line_1: "25 Mystic Ave",
+                                    address_line_2: "",
+                                    locality: "Boston",
+                                    state: "MA",
+                                    postal_code: "03908",
+                                    country: "US",
+                                    first_name: "Ryan",
+                                    last_name: "Reynolds"
+                                },
+                                note: "Donation in memory"
+                            });
+                            
                             const response = await fetch(`/donate`, {
                                 method: "POST",
                                 headers: {
-                                "Content-type": "application/json",
+                                    "Content-type": "application/json",
                                 },
                                 body,
                             })
-
+                            
                             if (response.ok) {
                                 setSquareData(await response.json());
                             } else {
                                 console.log("there was an error with the payment")
                             }
                         }}
-                        locationId='L67RFFDB8KKW2'
                         createPaymentRequest={() => ({
                             countryCode: "US",
                             currencyCode: "USD",
@@ -93,22 +100,7 @@ function WaysToHelp() {
                               label: "Total",
                             },
                           })}
-                        // createVerificationDetails={() => ({
-                        //     amount: '1.00',
-                        //     /* collected from the buyer */
-                        //     billingContact: {
-                        //       addressLines: ['123 Main Street', 'Apartment 1'],
-                        //       familyName: 'Doe',
-                        //       givenName: 'John',
-                        //       countryCode: 'US',
-                        //       city: 'Portsmouth',
-                        //     },
-                        //     currencyCode: 'USD',
-                        //     intent: 'CHARGE',
-                        //   })}
-                    >
-                        {/* <ApplePay />
-                        <GooglePay /> */}
+                        >
                         <CreditCard 
                             buttonProps={{
                                 css: {
@@ -118,8 +110,7 @@ function WaysToHelp() {
                                     backgroundColor: "#530f16",
                                 },
                                 },
-                                isLoading: false,
-                                // onClick: onClick,
+                                // isLoading: false,
                             }}
                         />
                     </PaymentForm>

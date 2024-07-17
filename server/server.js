@@ -1,4 +1,5 @@
 const express = require('express');
+const bodyParser = require("body-parser");
 const app = express();
 const port = 4000;
 
@@ -8,6 +9,8 @@ const dotenv = require("dotenv");
 dotenv.config();
 var cors = require('cors');
 
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 app.use(cors());
 
 
@@ -20,23 +23,33 @@ const {paymentsApi} = new Client({
   
   async function handler(req, res) {
     try {
+      console.log("req: ", req.body)
+
         const response = await paymentsApi.createPayment({
-          locationId: req.locationId,
-          // sourceId: req.sourceId,
-        // Need to change sourceId
-          sourceId: "cnon:card-nonce-ok",
+          locationId: req.body.locationId,
+          sourceId: req.body.sourceId,
           idempotencyKey: randomUUID(),
           amountMoney: {
-            amount: 100,
-            currency: 'USD'
+            amount: req.body.amount.amount,
+            currency: req.body.amount.currency
           },
-          billingAddress: {},
-          shippingAddress: {},
-          customerDetails: {}
+          billingAddress: {
+            address_line_1: req.body.billingInfo.address_line_1,
+            address_line_2: req.body.billingInfo.address_line_2,
+            locality: req.body.billingInfo.locality,
+            administrative_district_level_1: req.body.billingInfo.state,
+            postal_code: req.body.billingInfo.postal_code,
+            country: req.body.billingInfo.country,
+            first_name: req.body.billingInfo.first_name,
+            last_name: req.body.billingInfo.last_name
+          },
+          note: req.body.note,
+          // customerDetails: {}
         });
-      
-        console.log("response", response.result.payment.status);
-        console.log("response in back end", response.result);
+
+        console.log(response.result)
+        // console.log("response", response.result.payment.status);
+        // console.log("response in back end", response.result);
         /* global BigInt */
         BigInt.prototype.toJSON = function() { return this.toString(); }
         res.send(response.body);
