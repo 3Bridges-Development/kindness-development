@@ -39,17 +39,26 @@ function WaysToHelp() {
             <Row className="paymentContainer theWaysToHelp" id="howToHelp">
                 <Col md="12">
                     <h1>Donate Now</h1>
+                    <p><i class="fas fa-lock"></i> Secured by Square</p>
 
                     <Form>
                         <h2>Amount:</h2>
                         <Form.Group className="mb-3" controlId="formAmount">
-                            <Form.Check type="checkbox" label="50" onClick={() => console.log("hereee")} />
-                            <Form.Check type="checkbox" label="100" />
-                            <Form.Check type="checkbox" label="250" />
-                            <Form.Check type="checkbox" label="500" />
-                            <Form.Check type="checkbox" label="1000" />
-                            <Form.Label>Other:</Form.Label>
-                                <Form.Control type="other" placeholder="Custom Amount" />
+                            <Form.Check inline type="checkbox" label="50" onClick={() => console.log("hereee")} />
+                            <Form.Check inline type="checkbox" label="100" />
+                            <Form.Check inline type="checkbox" label="250" />
+                            <Form.Check inline type="checkbox" label="500" />
+                            <Form.Check inline type="checkbox" label="1000" />
+                            <Form.Check inline type="checkbox" label="Other" />
+                            <br />
+                            {/* if more than one checkbox is selected, then show the below message - show in red */}
+                            {/* <Form.Text className="text-muted">
+                                Select one amount or enter customer amount
+                            </Form.Text>
+                            <br /> */}
+                            {/* only show when customer checkbox is selected */}
+                            <Form.Label>Custom:</Form.Label>
+                            <Form.Control inline type="other" placeholder="Custom Amount" />
                         </Form.Group>
 
                         <h2>Tribute Gift:</h2>
@@ -60,30 +69,37 @@ function WaysToHelp() {
 
                         <h2>Billing Info:</h2>
                         <Form.Group className="mb-3" controlId="formBillingInfo">
-                            <Form.Label>First Name</Form.Label>
-                            <Form.Control type="firstName" placeholder="First Name" />
-                            <Form.Label>Last Name</Form.Label>
-                            <Form.Control type="lastName" placeholder="Last Name" />
-                            <Form.Label>Address</Form.Label>
-                            <Form.Control type="address1" placeholder="Address" />
-                            <Form.Label>City/Town</Form.Label>
-                            <Form.Control type="cityTown" placeholder="City/Town" />
-                            <Form.Label>State</Form.Label>
-                            <Form.Control type="state" placeholder="State" />
-                            <Form.Label>Area Code</Form.Label>
-                            <Form.Control type="areaCode" placeholder="Area Code" />
-                            <Form.Label>Country</Form.Label>
-                            <Form.Control type="country" placeholder="Country" />
-
-                            {/* <Form.Text className="text-muted">
-                            We'll never share your email with anyone else.
-                            </Form.Text> */}
+                            <Row>
+                                <Col>
+                                    <Form.Label>First Name</Form.Label>
+                                    <Form.Control type="firstName" placeholder="First Name" />
+                                    <Form.Label>Address</Form.Label>
+                                    <Form.Control type="address1" placeholder="Address" />
+                                    <Form.Label>State</Form.Label>
+                                    <Form.Control type="state" placeholder="State" />
+                                </Col>
+                                <Col>
+                                    <Form.Label>Last Name</Form.Label>
+                                    <Form.Control type="lastName" placeholder="Last Name" />
+                                    <Form.Label>City/Town</Form.Label>
+                                    <Form.Control type="cityTown" placeholder="City/Town" />
+                                    <Form.Label>Area Code</Form.Label>
+                                    <Form.Control type="areaCode" placeholder="Area Code" />
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col>
+                                    <Form.Label>Country</Form.Label>
+                                    <Form.Control type="country" placeholder="Country" />
+                                </Col>
+                            </Row>
                         </Form.Group>
 
                         {/* <Button variant="primary" type="submit">
                             Submit
                         </Button> */}
                     </Form>
+                    <h2>Payment Info:</h2>
                     <PaymentForm 
                         applicationId="sandbox-sq0idb-M6GKByXppqVLCcyxjRLhTQ"
                         locationId='L67RFFDB8KKW2'
@@ -124,14 +140,14 @@ function WaysToHelp() {
                                 console.log("there was an error with the payment")
                             }
                         }}
-                        createPaymentRequest={() => ({
-                            countryCode: "US",
-                            currencyCode: "USD",
-                            total: {
-                            amount: "1.00",
-                            label: "Total",
-                            },
-                        })}
+                        // createPaymentRequest={() => ({
+                        //     countryCode: "US",
+                        //     currencyCode: "USD",
+                        //     total: {
+                        //         amount: "1.00",
+                        //         label: "Total",
+                        //     },
+                        // })}
                     >
                     <CreditCard 
                         buttonProps={{
@@ -142,6 +158,7 @@ function WaysToHelp() {
                                     backgroundColor: "#530f16",
                                 },
                                 },
+                                text: "Donate"
                                 // isLoading: false,
                             }}
                     />
