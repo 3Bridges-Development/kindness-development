@@ -4,6 +4,8 @@ import newWave1 from "../Assets/newWave1.png";
 import { PaymentForm, CreditCard, ApplePay, GooglePay } from "react-square-web-payments-sdk";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
+// import Button from 'react-bootstrap/Button';
 // import wave5 from "../Assets/wave5.png";
 
 // TODO: add top image when content is ready
@@ -27,36 +29,66 @@ const secondStyle = {
     backgroundRepeat: "no-repeat",
 };
 
-// const DOMAIN = window.location.host
-
 
 function WaysToHelp() {
     let [squareData, setSquareData] = useState(null);
-    // console.log("domain", DOMAIN)
-    // const onClick = () => {
-    //     console.log("button was clicked!")
-    //   };
 
     return (
         <>
         {console.log("square response: ", squareData) } 
             <Row className="paymentContainer theWaysToHelp" id="howToHelp">
-                <Col md="12 justify-content-center">
+                <Col md="12">
                     <h1>Donate Now</h1>
-                    <p><i class="fas fa-lock"></i> Secured by Square</p>
-                    <form>
-                        <label for="firstName">First Name:</label>
-                        <input type="text" id="firstName" name="firstName"></input>
-                        <label for="lastName">Last Name:</label>
-                        <input type="text" id="lastName" name="lastName"></input>
-                        {/* add amount, address, and optional note, then send it to backend */}
-                    </form>
 
+                    <Form>
+                        <h2>Amount:</h2>
+                        <Form.Group className="mb-3" controlId="formAmount">
+                            <Form.Check type="checkbox" label="50" onClick={() => console.log("hereee")} />
+                            <Form.Check type="checkbox" label="100" />
+                            <Form.Check type="checkbox" label="250" />
+                            <Form.Check type="checkbox" label="500" />
+                            <Form.Check type="checkbox" label="1000" />
+                            <Form.Label>Other:</Form.Label>
+                                <Form.Control type="other" placeholder="Custom Amount" />
+                        </Form.Group>
+
+                        <h2>Tribute Gift:</h2>
+                        <Form.Group className="mb-3" controlId="formMemory">
+                                <Form.Label>In memory, support, or honor of someone (optional)</Form.Label>
+                                <Form.Control type="memory" placeholder="Message" />
+                        </Form.Group>
+
+                        <h2>Billing Info:</h2>
+                        <Form.Group className="mb-3" controlId="formBillingInfo">
+                            <Form.Label>First Name</Form.Label>
+                            <Form.Control type="firstName" placeholder="First Name" />
+                            <Form.Label>Last Name</Form.Label>
+                            <Form.Control type="lastName" placeholder="Last Name" />
+                            <Form.Label>Address</Form.Label>
+                            <Form.Control type="address1" placeholder="Address" />
+                            <Form.Label>City/Town</Form.Label>
+                            <Form.Control type="cityTown" placeholder="City/Town" />
+                            <Form.Label>State</Form.Label>
+                            <Form.Control type="state" placeholder="State" />
+                            <Form.Label>Area Code</Form.Label>
+                            <Form.Control type="areaCode" placeholder="Area Code" />
+                            <Form.Label>Country</Form.Label>
+                            <Form.Control type="country" placeholder="Country" />
+
+                            {/* <Form.Text className="text-muted">
+                            We'll never share your email with anyone else.
+                            </Form.Text> */}
+                        </Form.Group>
+
+                        {/* <Button variant="primary" type="submit">
+                            Submit
+                        </Button> */}
+                    </Form>
                     <PaymentForm 
                         applicationId="sandbox-sq0idb-M6GKByXppqVLCcyxjRLhTQ"
                         locationId='L67RFFDB8KKW2'
                         cardTokenizeResponseReceived={async (token, verifiedBuyer) => {
-                            
+                                
                             const body = JSON.stringify({
                                 sourceId: token.token,
                                 locationId: "L67RFFDB8KKW2",
@@ -77,7 +109,7 @@ function WaysToHelp() {
                                 },
                                 note: "Donation in memory"
                             });
-                            
+                                
                             const response = await fetch(`/donate`, {
                                 method: "POST",
                                 headers: {
@@ -85,7 +117,7 @@ function WaysToHelp() {
                                 },
                                 body,
                             })
-                            
+                                
                             if (response.ok) {
                                 setSquareData(await response.json());
                             } else {
@@ -96,13 +128,13 @@ function WaysToHelp() {
                             countryCode: "US",
                             currencyCode: "USD",
                             total: {
-                              amount: "1.00",
-                              label: "Total",
+                            amount: "1.00",
+                            label: "Total",
                             },
-                          })}
-                        >
-                        <CreditCard 
-                            buttonProps={{
+                        })}
+                    >
+                    <CreditCard 
+                        buttonProps={{
                                 css: {
                                 backgroundColor: "#9A2222",
                                 color: "#fff",
@@ -112,8 +144,9 @@ function WaysToHelp() {
                                 },
                                 // isLoading: false,
                             }}
-                        />
-                    </PaymentForm>
+                    />
+                 </PaymentForm>
+
                 </Col>
             </Row>
             <section style={secondStyle}>

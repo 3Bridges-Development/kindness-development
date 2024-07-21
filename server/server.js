@@ -35,7 +35,7 @@ const {paymentsApi} = new Client({
           },
           billingAddress: {
             address_line_1: req.body.billingInfo.address_line_1,
-            address_line_2: req.body.billingInfo.address_line_2,
+            // address_line_2: req.body.billingInfo.address_line_2,
             locality: req.body.billingInfo.locality,
             administrative_district_level_1: req.body.billingInfo.state,
             postal_code: req.body.billingInfo.postal_code,
@@ -48,8 +48,6 @@ const {paymentsApi} = new Client({
         });
 
         console.log(response.result)
-        // console.log("response", response.result.payment.status);
-        // console.log("response in back end", response.result);
         /* global BigInt */
         BigInt.prototype.toJSON = function() { return this.toString(); }
         res.send(response.body);
