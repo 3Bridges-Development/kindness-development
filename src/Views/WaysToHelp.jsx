@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import newWave1 from "../Assets/newWave1.png";
 import { PaymentForm, CreditCard, ApplePay, GooglePay } from "react-square-web-payments-sdk";
 import Row from 'react-bootstrap/Row';
@@ -32,6 +32,53 @@ const secondStyle = {
 
 function WaysToHelp() {
     let [squareData, setSquareData] = useState(null);
+    let [firstAmount, setFirstAmount] = useState(false);
+    let [secondAmount, setSecondAmount] = useState(false);
+    let [thirdAmount, setThirdAmount] = useState(false);
+    let [fourthAmount, setFourthAmount] = useState(false);
+    let [fifthAmount, setFifthAmount] = useState(false);
+    let [otherAmount, setOtherAmount] = useState(false);
+    let [customAmount, setCustomAmount] = useState("");
+    let [showAmountMessage, setShowAmountMessage] = useState(false);
+    let [disableButton, setDisableButton] = useState(false);
+    let [tributeGift, setTributeGift] = useState(false);
+    let [tributeGiftMessage, setTributeGiftMessage] = useState("");
+    let [firstName, setFirstName] = useState("");
+    let [lastName, setLastName] = useState("");
+    let [address, setAddress] = useState("");
+    let [state, setState] = useState("");
+    let [city, setCity] = useState("");
+    let [postalCode, setPostalCode] = useState("");
+    let [country, setCountry] = useState("");
+    let [selectedAmount, setSelectedAmount] = useState("")
+
+    function determineNumberOfAmountsSelected() {
+        const selections = [firstAmount, secondAmount, thirdAmount, fourthAmount, fifthAmount, otherAmount, customAmount];
+        const currentSelections = selections.filter((item) => item === true);
+        setShowAmountMessage(currentSelections.length > 1 ? true : false);
+        setDisableButton(currentSelections.length > 1 ? true : false);
+        if(currentSelections.length === 1){
+            let selectedAmount = "";
+            if(firstAmount){
+                selectedAmount = 50
+            } else if(secondAmount){
+                selectedAmount = 100
+            } else if(thirdAmount){
+                selectedAmount = 250
+            } else if(fourthAmount){
+                selectedAmount = 500
+            } else if(fifthAmount){
+                selectedAmount = 1000
+            } else if(customAmount){
+                selectedAmount = customAmount
+            }
+            setSelectedAmount(selectedAmount)
+        }
+    }
+
+    useEffect(() => {
+        determineNumberOfAmountsSelected();
+    })
 
     return (
         <>
@@ -39,58 +86,72 @@ function WaysToHelp() {
             <Row className="paymentContainer theWaysToHelp" id="howToHelp">
                 <Col md="12">
                     <h1>Donate Now</h1>
-                    <p><i class="fas fa-lock"></i> Secured by Square</p>
+                    <p><i className="fas fa-lock"></i> Secured by Square</p>
 
                     <Form>
-                        <h2>Amount:</h2>
+                        <h4>Amount ($):</h4>
                         <Form.Group className="mb-3" controlId="formAmount">
-                            <Form.Check inline type="checkbox" label="50" onClick={() => console.log("hereee")} />
-                            <Form.Check inline type="checkbox" label="100" />
-                            <Form.Check inline type="checkbox" label="250" />
-                            <Form.Check inline type="checkbox" label="500" />
-                            <Form.Check inline type="checkbox" label="1000" />
-                            <Form.Check inline type="checkbox" label="Other" />
+                            <Form.Check inline type="checkbox" label="50" onClick={() => setFirstAmount(!firstAmount)} />
+                            <Form.Check inline type="checkbox" label="100" onClick={() => setSecondAmount(!secondAmount)} />
+                            <Form.Check inline type="checkbox" label="250" onClick={() => setThirdAmount(!thirdAmount)} />
+                            <Form.Check inline type="checkbox" label="500" onClick={() => setFourthAmount(!fourthAmount)} />
+                            <Form.Check inline type="checkbox" label="1000" onClick={() => setFifthAmount(!fifthAmount)} />
+                            <Form.Check inline type="checkbox" label="Other" onClick={() => setOtherAmount(!otherAmount)} />
                             <br />
-                            {/* if more than one checkbox is selected, then show the below message - show in red */}
-                            {/* <Form.Text className="text-muted">
-                                Select one amount or enter customer amount
-                            </Form.Text>
-                            <br /> */}
-                            {/* only show when customer checkbox is selected */}
-                            <Form.Label>Custom:</Form.Label>
-                            <Form.Control inline type="other" placeholder="Custom Amount" />
+                            {showAmountMessage ? (
+                                <>
+                                    <Form.Text className="textForAmounts">
+                                        Select one amount or enter custom amount
+                                    </Form.Text>
+                                    <br />
+                                </>
+                            ) : (
+                                ""
+                            )}
+                            {otherAmount ? (
+                                <>
+                                    <Form.Label>Custom:</Form.Label>
+                                    <Form.Control inline type="other" placeholder="Custom Amount" onChange={(event) => setCustomAmount(event.target.value)} />
+                                </>
+                            ) : (
+                                ""
+                            )}
                         </Form.Group>
 
-                        <h2>Tribute Gift:</h2>
+                        <h4>Tribute Gift:</h4>
                         <Form.Group className="mb-3" controlId="formMemory">
-                                <Form.Label>In memory, support, or honor of someone (optional)</Form.Label>
-                                <Form.Control type="memory" placeholder="Message" />
+                                <Form.Check inline type="checkbox" label="Gift is in memory, support, or honor of someone" onClick={() => setTributeGift(!tributeGift)} />
+                                {tributeGift ? (
+                                    <Form.Control type="memory" placeholder="Message for Tribute Gift" onChange={(event) => setTributeGiftMessage(event.target.value)} />
+                                ) : (
+                                    ""
+                                )}
                         </Form.Group>
 
-                        <h2>Billing Info:</h2>
+                        <h4>Billing Info:</h4>
                         <Form.Group className="mb-3" controlId="formBillingInfo">
                             <Row>
                                 <Col>
                                     <Form.Label>First Name</Form.Label>
-                                    <Form.Control type="firstName" placeholder="First Name" />
+                                    <Form.Control type="firstName" placeholder="First Name" onChange={(event) => setFirstName(event.target.value)} />
                                     <Form.Label>Address</Form.Label>
-                                    <Form.Control type="address1" placeholder="Address" />
+                                    <Form.Control type="address1" placeholder="Address" onChange={(event) => setAddress(event.target.value)} />
                                     <Form.Label>State</Form.Label>
-                                    <Form.Control type="state" placeholder="State" />
+                                    <Form.Control type="state" placeholder="State" onChange={(event) => setState(event.target.value)} />
                                 </Col>
                                 <Col>
                                     <Form.Label>Last Name</Form.Label>
-                                    <Form.Control type="lastName" placeholder="Last Name" />
+                                    <Form.Control type="lastName" placeholder="Last Name" onChange={(event) => setLastName(event.target.value)} />
                                     <Form.Label>City/Town</Form.Label>
-                                    <Form.Control type="cityTown" placeholder="City/Town" />
+                                    <Form.Control type="cityTown" placeholder="City/Town" onChange={(event) => setCity(event.target.value)} />
                                     <Form.Label>Area Code</Form.Label>
-                                    <Form.Control type="areaCode" placeholder="Area Code" />
+                                    <Form.Control type="areaCode" placeholder="Area Code" onChange={(event) => setPostalCode(event.target.value)} />
                                 </Col>
                             </Row>
                             <Row>
                                 <Col>
                                     <Form.Label>Country</Form.Label>
-                                    <Form.Control type="country" placeholder="Country" />
+                                    <Form.Control type="country" placeholder="Country" onChange={(event) => setCountry(event.target.value)} />
                                 </Col>
                             </Row>
                         </Form.Group>
@@ -99,31 +160,31 @@ function WaysToHelp() {
                             Submit
                         </Button> */}
                     </Form>
-                    <h2>Payment Info:</h2>
+                    <h4>Payment Info:</h4>
                     <PaymentForm 
                         applicationId="sandbox-sq0idb-M6GKByXppqVLCcyxjRLhTQ"
                         locationId='L67RFFDB8KKW2'
                         cardTokenizeResponseReceived={async (token, verifiedBuyer) => {
-                                
+                                console.log("selectedAmount!!!", selectedAmount)
                             const body = JSON.stringify({
                                 sourceId: token.token,
                                 locationId: "L67RFFDB8KKW2",
                                 verificationToken: verifiedBuyer,
                                 amount: {
-                                    amount: 50,
+                                    amount: selectedAmount,
                                     currency: 'USD'
                                 },
                                 billingInfo: {
-                                    address_line_1: "25 Mystic Ave",
+                                    address_line_1: address,
                                     address_line_2: "",
-                                    locality: "Boston",
-                                    state: "MA",
-                                    postal_code: "03908",
-                                    country: "US",
-                                    first_name: "Ryan",
-                                    last_name: "Reynolds"
+                                    locality: city,
+                                    state: state,
+                                    postal_code: postalCode,
+                                    country: country,
+                                    first_name: firstName,
+                                    last_name: lastName
                                 },
-                                note: "Donation in memory"
+                                note: tributeGiftMessage
                             });
                                 
                             const response = await fetch(`/donate`, {
@@ -158,8 +219,8 @@ function WaysToHelp() {
                                     backgroundColor: "#530f16",
                                 },
                                 },
-                                text: "Donate"
-                                // isLoading: false,
+                                text: "Donate",
+                                isLoading: disableButton,
                             }}
                     />
                  </PaymentForm>
