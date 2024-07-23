@@ -17,7 +17,7 @@ import newWave1 from "../Assets/newWave1.png";
 const secondStyle = {
     backgroundImage:
         `url('${newWave1}')`,
-    height: "50vh",
+    height: "100vh",
     backgroundPosition: "center bottom",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",

@@ -38,8 +38,11 @@ query {
   }},
   academyProgramsCollection{items{
     academyPrograms
+  }},
+  howIsAPersonReferredCollection{items{
+    referredInfo
   }}
-  }
+}
 `
 
 function App() {
