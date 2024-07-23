@@ -1,6 +1,6 @@
 .allServices {
     padding-top: 50px;
-    color: $red;
+    color: $black;
     font-size: 1.2rem;
     
     .programs {
@@ -30,7 +30,7 @@
     }
 
     .plugText {
-        color: $red;
+        color: $black;
     }
 
     .plugLink {
@@ -39,5 +39,9 @@
 
     .programInfoSection {
         padding-bottom: 50px;
+    }
+
+    .enrollmentEligibility {
+        padding-top: 50px;
     }
 }

@@ -23,7 +23,7 @@ import Form from 'react-bootstrap/Form';
 const secondStyle = {
     backgroundImage:
         `url('${newWave1}')`,
-    height: "50vh",
+    height: "100vh",
     backgroundPosition: "center bottom",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
