@@ -6,7 +6,7 @@ import newWave3 from "../Assets/newWave3.png";
 const firstStyle = {
     backgroundImage:
         `url('${newWave2Rotate}')`,
-    minHeight: "100vh",
+    hminHeight: "100vh",
     backgroundPosition: "center top",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
