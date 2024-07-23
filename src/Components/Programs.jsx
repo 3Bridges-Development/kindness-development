@@ -29,7 +29,7 @@ function Programs() {
                 </Col>
             </Row>
             <Row className="justify-content-center programs" id="thePrograms">
-                <Col className="firstProgramText" md="10">
+                <Col className="firstProgramText" md="8">
                     {data.programsOnServicesPageCollection.items ? (
                         data.programsOnServicesPageCollection.items.map(program => (
                             <ReactMarkdown key={program.programsAndEnrollment} className="programInfoSection">
@@ -42,11 +42,13 @@ function Programs() {
             <Row className="justify-content-center programs" id="enrollment">
                 <Col className="text" md="8">
                     <Row className="justify-content-center">
-                        <Col className="textEnrollment" md="8">
+                        <Col className="textEnrollment" md="10">
                             {data.servicesPageCollection.items[0].enrollmentEligibility ? (
-                                <ReactMarkdown>
-                                    {data.servicesPageCollection.items[0].enrollmentEligibility}
-                                </ReactMarkdown>
+                                data.servicesPageCollection.items.map(program => (
+                                    <ReactMarkdown key={program.enrollmentEligibility} className="enrollmentEligibility">
+                                        {program.enrollmentEligibility}
+                                    </ReactMarkdown>
+                                ))
                             ) : ""}
                         </Col>
                     </Row>
