@@ -5,25 +5,11 @@ import { PaymentForm, CreditCard, ApplePay, GooglePay } from "react-square-web-p
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
-// import Button from 'react-bootstrap/Button';
-// import wave5 from "../Assets/wave5.png";
-
-// TODO: add top image when content is ready
-// const firstStyle = {
-//     backgroundImage:
-//         // `url('${newWave1Rotated}')`,
-//         `url('${wave5}')`,
-//         // `url('${newWaveYellow}')`,
-//     minHeight: "50vh",
-//     backgroundPosition: "center top",
-//     backgroundSize: "cover",
-//     backgroundRepeat: "no-repeat",
-// };
 
 const secondStyle = {
     backgroundImage:
         `url('${newWave1}')`,
-    height: "100vh",
+    height: "50vh",
     backgroundPosition: "center bottom",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
@@ -155,10 +141,6 @@ function WaysToHelp() {
                                 </Col>
                             </Row>
                         </Form.Group>
-
-                        {/* <Button variant="primary" type="submit">
-                            Submit
-                        </Button> */}
                     </Form>
                     <h4>Payment Info:</h4>
                     <PaymentForm 
