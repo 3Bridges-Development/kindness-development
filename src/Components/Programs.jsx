@@ -41,10 +41,10 @@ function Programs() {
             </Row>
             <Row className="justify-content-center programs" id="thePrograms">
                 <Col className="firstProgramText" md="8">
-                    {data.programsOnServicesPageCollection.items ? (
-                        data.programsOnServicesPageCollection.items.map(program => (
-                            <ReactMarkdown key={program.programsAndEnrollment} className="programInfoSection">
-                                {program.programsAndEnrollment}
+                    {data.vissionOnServicesPageCollection.items[0] ? (
+                        data.vissionOnServicesPageCollection.items.map(vision => (
+                            <ReactMarkdown key={vision.vission} className="programInfoSection">
+                                {vision.vission}
                             </ReactMarkdown>
                         ))
                     ) : ""}
