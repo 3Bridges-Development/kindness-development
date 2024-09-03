@@ -41,7 +41,12 @@ query {
   }},
   howIsAPersonReferredCollection{items{
     referredInfo
-  }}
+  }},
+  vissionOnServicesPageCollection{
+    items{
+      vission
+    }
+  }
 }
 `
 
