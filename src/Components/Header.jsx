@@ -58,6 +58,11 @@ function Header() {
                     <NavDropdown title="The Academy" id="navbarScrollingDropdown">
                         <Row className="justify-content-center navRow">
                             <Col>
+                                <HashLink to="/academy/#referredData" className="navBarText">Referrals and Application</HashLink>
+                            </Col>
+                        </Row>
+                        <Row className="justify-content-center navRow">
+                            <Col>
                                 <HashLink to="/academy/#curriculum" className="navBarText">Curriculum</HashLink>
                             </Col>
                         </Row>

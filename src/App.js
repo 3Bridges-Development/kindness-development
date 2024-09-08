@@ -20,7 +20,8 @@ query {
       height
     }},
     socialMediaLinks,
-    aboutUsGeneralInfo
+    aboutUsGeneralInfo,
+    phoneNumber
   }},
   servicesPageCollection{
     items{
@@ -42,7 +43,7 @@ query {
   howIsAPersonReferredCollection{items{
     referredInfo
   }},
-  vissionOnServicesPageCollection{
+  visionOnServicesPageCollection{
     items{
       vission
     }

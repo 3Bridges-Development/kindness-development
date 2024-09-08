@@ -7,6 +7,7 @@ import { useOutletContext } from "react-router-dom";
 function Contact() {
   const data = useOutletContext();
   const contactData = data.aboutPageCollection.items[0].socialMediaLinks;
+  const phoneNumber = data.aboutPageCollection.items[0].phoneNumber;
 
     return (
     <Container id="contact">
@@ -68,6 +69,20 @@ function Contact() {
                     ) : ""
                 ))
             ) : ""}
+            {phoneNumber ? (
+                <Col className="text" md="3" key={phoneNumber}>
+                    <Row>
+                        <a href={`tel:+${phoneNumber}`} rel="noopener noreferrer">
+                            <i className="fa-solid fa-phone" style={{fontSize: "48px"}}></i>
+                        </a>
+                    </Row>
+                    <Row className="text">
+                            <a href={`tel:+${phoneNumber}`} rel="noopener noreferrer">
+                                <span>Phone Number</span>
+                            </a>
+                    </Row>
+                </Col>
+            ) : ("")}
             {/* may add YouTube icon in the future */}
         </Row>
     </Container>
