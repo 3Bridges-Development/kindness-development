@@ -7,22 +7,24 @@ import UseContentful from './Hooks/use-contentful';
 
 const query = `
 query {
-  aboutPageCollection{items{
-    aboutMission,
-    theCenterQuoteAndText,
-    boardOfDirectorsText,
-    secondBoardOfDirectorsText,
-    aboutGalleryCollection{items{
-      title,
-      description,
-      url,
-      width,
-      height
-    }},
-    socialMediaLinks,
-    aboutUsGeneralInfo,
-    phoneNumber
-  }},
+  aboutPageCollection{
+    items{
+      aboutMission,
+      theCenterQuoteAndText,
+      boardOfDirectorsText,
+      secondBoardOfDirectorsText,
+      aboutGalleryCollection{items{
+        title,
+        description,
+        url,
+        width,
+        height
+      }},
+      socialMediaLinks,
+      aboutUsGeneralInfo,
+      phoneNumber
+    }
+  },
   servicesPageCollection{
     items{
       vision,
@@ -46,6 +48,11 @@ query {
   visionOnServicesPageCollection{
     items{
       vission
+    }
+  },
+  donationPageCollection{
+    items{
+      donationPageInfo
     }
   }
 }
