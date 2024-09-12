@@ -50,6 +50,17 @@ function Programs() {
                     ) : ""}
                 </Col>
             </Row>
+            <Row className="justify-content-center programs" id="theProgramsDetails">
+                <Col className="firstProgramText" md="8">
+                    {data.programsOnServicesPageCollection.items[0] ? (
+                        data.programsOnServicesPageCollection.items.map(program => (
+                            <ReactMarkdown key={program.programsAndEnrollment} className="programInfoSection">
+                                {program.programsAndEnrollment}
+                            </ReactMarkdown>
+                        ))
+                    ) : ""}
+                </Col>
+            </Row>
             <Row className="justify-content-center programs" id="enrollment">
                 <Col className="text" md="8">
                     <Row className="justify-content-center">

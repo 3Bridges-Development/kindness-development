@@ -14,8 +14,10 @@ function AcademyInfo() {
         <section className="academyInfo">
             <Row className="justify-content-center" id="academy">
                 <Row className="justify-content-center imageData">
-                    <Col md="6">
-                        <img src={kdclogo} alt="circle with kindness developmental center inc" className="mainLogo"/>
+                    <Col md="6" className="imageCol">
+                        <div className="imageDiv align-middle">
+                            <img width="100%" src={kdclogo} alt="Circular Kindness Developmental Center Inc. logo" className="mainLogo" />
+                        </div>
                     </Col>
                 </Row>
                 <Row className="futureText justify-content-center" id="referredData">
