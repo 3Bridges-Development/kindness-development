@@ -1,6 +1,8 @@
 import React from "react";
 import newWave1 from "../Assets/newWave1.png";
 import { Row, Col } from "react-bootstrap";
+import { useOutletContext } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
 
 const bottomStyle = {
     backgroundImage:
@@ -12,6 +14,7 @@ const bottomStyle = {
 };
 
 function WaysToHelp() {
+    const data = useOutletContext();
 
     return (
         <>
@@ -29,6 +32,15 @@ function WaysToHelp() {
                     </stripe-buy-button>
                 </Col>
             </Row>
+            {data.donationPageCollection.items.length !== 0 ? (
+                <Row className="donationText justify-content-center" id="donationInfo">
+                    <Col md="8">
+                        <ReactMarkdown>
+                            {data.donationPageCollection.items[0].donationPageInfo}
+                        </ReactMarkdown>
+                    </Col>
+                </Row>
+            ) : ("")}
             <section style={bottomStyle}>
             </section>
         </>
