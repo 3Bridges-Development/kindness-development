@@ -7,6 +7,14 @@
 
     .text {
         padding-top: 10px;
-        color: $blue
+        color: $blue;
+
+        a {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+        }
     }
 }
