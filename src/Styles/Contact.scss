@@ -6,7 +6,15 @@
     }
 
     .text {
-        padding-top: 10px;
-        color: $blue
+        padding: 1rem 0 0;
+        color: $blue;
+
+        a {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+        }
     }
 }
