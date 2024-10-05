@@ -2,16 +2,41 @@ import React from "react";
 import MainBlurb from "../Components/MainBlurb";
 import AboutUs from "../Components/AboutUs";
 import Center from "../Components/Center";
-import cafe from "../Assets/cafeImage.jpeg";
 import Contact from "../Components/Contact";
 import newWave3 from "../Assets/newWave3.png";
 import wave4 from "../Assets/wave4.png";
+import UseContentful from "../Hooks/use-contentful";
+
+const query = `
+query {
+  aboutPageCollection{
+    items{
+      backgroundImageOnHomePage{
+        title,
+        description,
+        url,
+        width,
+        height
+      }
+    }
+  }
+}
+`
 
 function Home() {
+  let { data, errors } = UseContentful(query);
+
+  if (errors)
+    return (
+      <span style={{ color: "red" }}>
+        {errors.map((error) => error.message).join(",")}
+      </span>
+    );
+  if (!data) return <span></span>;
 
     const homeStyle = {
         backgroundImage:
-            `url('${cafe}')`,
+            `url('${data.aboutPageCollection.items[0].backgroundImageOnHomePage.url}')`,
         minHeight: "70vh",
         backgroundPosition: "center center",
         backgroundSize: "cover",
@@ -38,7 +63,7 @@ function Home() {
 
     return (
         <div className="home">
-            <div style={homeStyle} alt="Background image of girl sitting in cafe">
+            <div style={homeStyle} alt={data.aboutPageCollection.items[0].backgroundImageOnHomePage.description}>
                 <MainBlurb />
             </div>
             <div style={secondStyle} alt="Background image of blue wave">

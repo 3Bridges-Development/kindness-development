@@ -2,9 +2,8 @@ import React from "react";
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import cafe2 from "../Assets/cafe2.jpeg";
 import { useOutletContext } from "react-router-dom";
-import ReactMarkdown from "react-markdown"
+import ReactMarkdown from "react-markdown";
 
 function Center() {
   const data = useOutletContext();
@@ -23,7 +22,9 @@ function Center() {
                 ) : ""}
             </Col>
             <Col className="image" md="6">
-                <img src={cafe2} width="75%" alt="people sitting at a table at a cafe" className="cafe2"/>
+                {data.aboutPageCollection.items[0].theCenterAndQuoteImage ? (
+                    <img src={data.aboutPageCollection.items[0].theCenterAndQuoteImage.url} width="75%" alt={data.aboutPageCollection.items[0].theCenterAndQuoteImage.description} className="cafe2"/>
+                ) : ""}
             </Col>
         </Row>
     </Container>
