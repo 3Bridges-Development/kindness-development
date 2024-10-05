@@ -6,13 +6,18 @@ import { Outlet } from "react-router-dom";
 import UseContentful from './Hooks/use-contentful';
 
 const query = `
-query {
-  aboutPageCollection{
+query {  
+aboutPageCollection{
     items{
       aboutMission,
       theCenterQuoteAndText,
-      boardOfDirectorsText,
-      secondBoardOfDirectorsText,
+      theCenterAndQuoteImage{
+        title,
+        description,
+        url,
+        width,
+        height
+      }
       aboutGalleryCollection{items{
         title,
         description,
@@ -24,7 +29,7 @@ query {
       aboutUsGeneralInfo,
       phoneNumber
     }
-  },
+  },  
   servicesPageCollection{
     items{
       vision,

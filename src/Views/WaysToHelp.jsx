@@ -25,11 +25,11 @@ function WaysToHelp() {
             </Row>
             <Row className="theWaysToHelp">
                 <Col md="12 justify-content-center">
-                    <stripe-buy-button
-                    buy-button-id="buy_btn_1Pjpm2Roha3LTV1IHrYUvfuu"
-                    publishable-key="pk_test_51Pc6U3Roha3LTV1I0tFLbBcKvDLtk3eHrpCVbXzjaEAup7XHKCUoUpC17LUFF9STnOb5tF4WEO2K5PHSTzH5rJmw00KQSwpUhm"
-                    >
-                    </stripe-buy-button>
+                <stripe-buy-button
+                    buy-button-id="buy_btn_1Q6Z7bCiNVy4UcACn51EpLBV"
+                    publishable-key="pk_live_51Pxd8tCiNVy4UcACFksxujTUUlgZGGcfHoZjzvJmSUeRgYCtGfLbLCMVK9owHYRwo14JFFJRFYuFKHDLBawZYRZj00nlxh2Zp2"
+                >
+                </stripe-buy-button>
                 </Col>
             </Row>
             {data.donationPageCollection.items.length !== 0 ? (
