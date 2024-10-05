@@ -4,6 +4,8 @@ import { Row, Col } from "react-bootstrap";
 import { useOutletContext } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 
+const { REACT_APP_STRIPE_BUY_BUTTON_ID, REACT_APP_STRIPE_PUBLISHABLE_KEY } = process.env;
+
 const bottomStyle = {
     backgroundImage:
         `url('${newWave1}')`,
@@ -26,8 +28,8 @@ function WaysToHelp() {
             <Row className="theWaysToHelp">
                 <Col md="12 justify-content-center">
                 <stripe-buy-button
-                    buy-button-id="buy_btn_1Q6Z7bCiNVy4UcACn51EpLBV"
-                    publishable-key="pk_live_51Pxd8tCiNVy4UcACFksxujTUUlgZGGcfHoZjzvJmSUeRgYCtGfLbLCMVK9owHYRwo14JFFJRFYuFKHDLBawZYRZj00nlxh2Zp2"
+                    buy-button-id={REACT_APP_STRIPE_BUY_BUTTON_ID}
+                    publishable-key={REACT_APP_STRIPE_PUBLISHABLE_KEY}
                 >
                 </stripe-buy-button>
                 </Col>
